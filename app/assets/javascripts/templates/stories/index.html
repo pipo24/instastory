@@ -1,0 +1,26 @@
+<h1>Listing Stories</h1>
+
+ <table id="stories-table">
+   <tr>
+     <th>Id</th>
+     <th>Title</th>
+     <th>Description</th>
+     <th>User</th>
+     <th>Images</th>
+   </tr>
+
+   <tbody>
+     <% _.each(stories, function(story){ %>
+       <tr>
+         <td><a href="/#stories/<%= story.get("id") %>"><%= story.get("title") %></td>
+         <td><%= story.get("user") %></td>
+         <td><%= story.get("images") %></td>
+       </tr>
+     <% }); %>
+   </tbody>
+
+ </table>
+
+ <br/>
+
+ <a href="/#stories/new">New Story</a>

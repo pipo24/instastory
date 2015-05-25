@@ -1,0 +1,25 @@
+<h1>Story</h1>
+
+ <p>
+   <b>Title:</b>
+   <a href="/#stories/<%= story.get("id") %>"><%= story.get("title") %></a>
+ </p>
+
+ <p>
+   <b>Description:</b>
+   <img src="<%= story.get("description") %>">
+ </p>
+
+ <p>
+   <b>User:</b>
+   <%= story.get("user") %>
+ </p>
+
+ <p>
+   <b>Images:</b>
+   <%= story.get("images") %>
+ </p>
+
+ <a class="delete" href="/#stories/<%= story.get("id") %>/delete">Delete</a>
+ <a class="edit" href="/#stories/<%= story.get("id") %>/edit">Edit</a>
+ <a href="/#stories">Back</a>

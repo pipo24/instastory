@@ -11,3 +11,5 @@ Rails.application.config.assets.version = '1.0'
 # Rails.application.config.assets.precompile += %w( search.js )
 
 Rails.application.config.assets.precompile += %w( lib/require.js app.js )
+
+Rails.application.config.non_digest_named_assets = ["app.js"]

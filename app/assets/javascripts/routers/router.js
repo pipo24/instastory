@@ -3,21 +3,23 @@ define([
   'underscore',
   'backbone',
   'views/application',
-], function($, _, Backbone, ApplicationView){
+  'lib/modules/csrf'
+  ], function($, _, Backbone, ApplicationView, csrf){
 
-  var Router = Backbone.Router.extend({
-    routes: {
-      ''               : 'home',
-      '*actions'       : 'defaultAction'
-    }
-  });
+    var Router = Backbone.Router.extend({
+      routes: {
+        ''               : 'home',
+        '*actions'       : 'defaultAction'
+      }
+    });
 
-  var layout = function(){
+    var layout = function(){
      new ApplicationView().render();
    }
 
-  var initialize = function(){
+   var initialize = function(){
 
+    csrf();
     layout();
 
     var router = new Router;

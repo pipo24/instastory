@@ -25,7 +25,6 @@ define([
     var router = new Router;
 
     router.on('route:home', function(){
-      console.log("Home");
     });
 
     router.on('route:defaultAction', function(actions) {

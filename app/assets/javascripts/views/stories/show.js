@@ -32,6 +32,7 @@ define([
 
     delete: function(ev){
       ev.preventDefault();
+      var self = this;
       this.story.destroy({
         success: function(){
           self.undelegateEvents();

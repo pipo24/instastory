@@ -1,0 +1,26 @@
+<h1>Story</h1>
+<div class="field">
+  <label>Title:</label>
+  <input type="text" name="title" value="<%= story.get("title") %>">
+</div>
+
+<div class="field">
+  <label>Description:</label>
+  <input type="text" name="description" value="<%= story.get("description") %>">
+</div>
+
+<div class="field">
+  <label>User:</label>
+  <input type="text" name="user" value="<%= story.get("user") %>">
+</div>
+
+<div class="field">
+  <label>Images:</label>
+  <input type="text" name="images" value="<%= story.get("images") %>">
+</div>
+
+<div class="actions">
+  <button><%= action %></button>
+</div>
+
+<a href="/#stories">Back</a>

@@ -2,8 +2,8 @@ define([
   'backbone',
   'views/stories/index',
   'views/stories/show',
-  // 'views/stories/form'
-  ], function(Backbone, StoriesIndexView, StoriesShowView){
+  'views/stories/form'
+  ], function(Backbone, StoriesIndexView, StoriesShowView, StoriesFormView){
 
     var Router = Backbone.Router.extend({
       routes: {
@@ -23,17 +23,16 @@ define([
       });
 
       router.on('route:new', function(){
-      // new StoriesFormView();
-    });
+        new StoriesFormView();
+      });
 
       router.on('route:show', function(id){
         new StoriesShowView(id)
       });
 
       router.on('route:edit', function(id){
-      // new StoriesFormView(id);
-    });
-
+        new StoriesFormView(id);
+      });
     }
 
     return {

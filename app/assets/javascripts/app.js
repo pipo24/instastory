@@ -5,10 +5,12 @@ define([
   'routers/router',
   'routers/storiesRouter',
   'routers/imagesRouter',
-  ], function($, _, Backbone, Router, StoriesRouter, ImagesRouter){
+  'routers/usersRouter',
+  ], function($, _, Backbone, Router, StoriesRouter, ImagesRouter, UsersRouter){
 
     var initialize = function(){
       Router.initialize();
+      UsersRouter.initialize();
       StoriesRouter.initialize();
       ImagesRouter.initialize();
       Backbone.history.start();

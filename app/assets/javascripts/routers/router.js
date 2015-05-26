@@ -10,8 +10,6 @@ define([
     var Router = Backbone.Router.extend({
       routes: {
         ''               : 'home',
-        'users/sign_in'  : 'signIn',
-        'users/sign_up'  : 'signUp',
         '*actions'       : 'defaultAction'
       }
     });

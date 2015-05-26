@@ -9,6 +9,15 @@ define([
       initialize: function(session) {
         this.model = session;
         this.model.on("successfulSignIn", this.render, this);
+        this.model.on("successfulSignOut", this.render, this);
+      },
+
+      events: {
+        "click #sign-out" : "signOut"
+      },
+
+      signOut: function() {
+        this.model.logOut();
       },
 
       render: function(){

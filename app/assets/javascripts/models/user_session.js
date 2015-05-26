@@ -18,6 +18,19 @@ define([
       },
       isLoggedIn: function() {
         return !!this.get("authentication_token");
+      },
+      logOut: function(){
+        var self = this;
+        $.ajax({
+          url: "/users/"+self.get("authentication_token"),
+          method: "DELETE",
+          dataType: "json"
+        }).done(function(data){
+          $.removeCookie("authentication_token");
+          // Clear all of the fields of the current instance
+          self.clear().set(self.defaults);
+          self.trigger("successfulSignOut");
+        });
       }
     });
   });

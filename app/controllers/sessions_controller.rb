@@ -27,6 +27,12 @@ class SessionsController < Devise::SessionsController
         render json: current_user
       end
 
+      def destroy
+        current_user.authentication_token = nil
+        current_user.save
+        render json: {}, status: 201
+      end
+
       private
       def current_user
         User.find_by authentication_token: params[:authentication_token]

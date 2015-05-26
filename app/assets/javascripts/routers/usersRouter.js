@@ -1,7 +1,8 @@
 define([
   'backbone',
+  'views/users/sign_in',
   'views/users/sign_up',
-  ], function(Backbone, SignUpView){
+  ], function(Backbone, SignInView, SignUpView){
 
     var Router = Backbone.Router.extend({
       routes: {
@@ -17,6 +18,11 @@ define([
       router.on('route:signUp', function(){
        new SignUpView().render();
      });
+
+      router.on('route:signIn', function(){
+        new SignInView().render();
+      });
+
     }
 
     return {

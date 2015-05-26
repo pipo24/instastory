@@ -1,4 +1,6 @@
 class SessionsController < Devise::SessionsController
+  skip_before_filter :require_no_authentication, only: [:create]
+  
   def create
     user = User.find_for_database_authentication(email: params[:email])
 

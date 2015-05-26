@@ -1,14 +1,17 @@
 define([
   'jquery',
+  'cookie',
   'underscore',
   'backbone',
   'views/application',
   'lib/modules/csrf'
-  ], function($, _, Backbone, ApplicationView, csrf){
+  ], function($, Cookie, _, Backbone, ApplicationView, csrf){
 
     var Router = Backbone.Router.extend({
       routes: {
         ''               : 'home',
+        'users/sign_in'  : 'signIn',
+        'users/sign_up'  : 'signUp',
         '*actions'       : 'defaultAction'
       }
     });
@@ -25,6 +28,14 @@ define([
     var router = new Router;
 
     router.on('route:home', function(){
+    });
+
+    router.on('route:signIn', function(){
+      console.log("sign in route");
+    });
+
+    router.on('route:signUp', function(){
+      console.log("sign up route");
     });
 
     router.on('route:defaultAction', function(actions) {

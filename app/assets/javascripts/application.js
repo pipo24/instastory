@@ -3,7 +3,8 @@ require.config({
     jquery: 'lib/jquery',
     underscore: 'lib/underscore',
     backbone: 'lib/backbone',
-    text: 'lib/text'
+    text: 'lib/text',
+    cookie: 'lib/jquery.cookie'
   }
 });
 

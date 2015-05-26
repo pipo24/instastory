@@ -7,7 +7,7 @@ define([
     urlRoot: "/images",
     defaults: {
       id: null,
-      picture: "",
+      picture: null,
       title: "",
       tags: "",
       image_username: "",

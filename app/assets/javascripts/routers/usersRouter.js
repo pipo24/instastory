@@ -11,18 +11,9 @@ define([
       }
     });
 
-    var initialize = function() {
+    var initialize = function(session) {
 
       var router = new Router;
-
-      router.on('route:signUp', function(){
-       new SignUpView().render();
-     });
-
-      router.on('route:signIn', function(){
-        new SignInView().render();
-      });
-
     }
 
     return {

@@ -1,6 +1,6 @@
 class SessionsController < Devise::SessionsController
   skip_before_filter :require_no_authentication, only: [:create]
-  
+
   def create
     user = User.find_for_database_authentication(email: params[:email])
 
@@ -15,11 +15,20 @@ class SessionsController < Devise::SessionsController
         gender: user.gender,
         profile_picture: user.profile_picture,
         authentication_token: user.authentication_token
-      }, status: 201
-    else
-      render json: {
-        errors: ["Invalid email or password"]
-      }, status: 422
+        }, status: 201
+      else
+        render json: {
+          errors: ["Invalid email or password"]
+          }, status: 422
+        end
+      end
+
+      def show
+        render json: current_user
+      end
+
+      private
+      def current_user
+        User.find_by authentication_token: params[:authentication_token]
+      end
     end
-  end
-end

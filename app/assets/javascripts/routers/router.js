@@ -4,45 +4,68 @@ define([
   'underscore',
   'backbone',
   'views/application',
+  'views/users/sign_in',
+  'views/users/sign_up',
+  'models/user_session',
   'lib/modules/csrf'
-  ], function($, Cookie, _, Backbone, ApplicationView, csrf){
+  ], function($, Cookie, _, Backbone, ApplicationView, SignInView, SignUpView, UserSession, csrf){
 
     var Router = Backbone.Router.extend({
       routes: {
         ''               : 'home',
+        'users/sign_in'  : 'signIn',
+        'users/sign_up'  : 'signUp',
         '*actions'       : 'defaultAction'
       }
     });
 
-    var layout = function(){
-     new ApplicationView().render();
-   }
+    var layout = function(session){
+      new ApplicationView(session).render();
+    }
 
-   var initialize = function(){
+    var getCurrentUser = function(callback){
+      var session = new UserSession();
+      
+      var token = $.cookie("authentication_token");
+      if (token != null) {
+        $.getJSON("/users/"+token, function(data){
+          var session = new UserSession(data);
+          callback(session)
+        });
+      } else {
+        var session = new UserSession();
+        callback(session)
+      } 
+    }
 
-    csrf();
-    layout();
+    var setRouter = function(session){
 
-    var router = new Router;
+      csrf();
+      layout(session);
 
-    router.on('route:home', function(){
-    });
+      var router = new Router;
 
-    router.on('route:signIn', function(){
-      console.log("sign in route");
-    });
+      router.on('route:home', function(){
+      });
 
-    router.on('route:signUp', function(){
-      console.log("sign up route");
-    });
+      router.on('route:signUp', function(){
+        new SignUpView().render();
+      });
 
-    router.on('route:defaultAction', function(actions) {
-      console.log('No route:', actions);
-    });
+      router.on('route:signIn', function(){
+        new SignInView(session).render();
+      });
 
-  }
+      router.on('route:defaultAction', function(actions) {
+        console.log('No route:', actions);
+      });
+    }
 
-  return {
-    initialize: initialize
-  }
-});
+    var initialize = function() {
+      getCurrentUser(setRouter);
+    }
+
+    return {
+      initialize: initialize
+    }
+  });

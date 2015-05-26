@@ -1,4 +1,5 @@
 <ul>
+  <%= user.cid %>
   <% if(user.isLoggedIn()){ %>
   <li><a href="/#users/sign_in">My Account(<%= user.get("email") %>)</a></li>
   <li><a href="#" id="sign-out">Sign out</a></li>

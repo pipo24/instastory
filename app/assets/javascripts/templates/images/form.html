@@ -1,0 +1,46 @@
+<h1>Image</h1>
+ <div class="field">
+   <label>Title:</label>
+   <input type="text" name="title" value="<%= image.get("title") %>">
+ </div>
+
+ <div class="field">
+   <label>Picture:</label>
+   <input type="text" name="picture" value="<%= image.get("picture") %>">
+ </div>
+
+ <div class="field">
+   <label>Instagram Tags:</label>
+   <input type="text" name="tags" value="<%= image.get("tags") %>">
+ </div>
+
+ <div class="field">
+   <label>Instagram User:</label>
+   <input type="text" name="image_username" value="<%= image.get("image_username") %>">
+ </div>
+
+ <div class="field">
+   <label>Location Name:</label>
+   <input type="text" name="location_name" value="<%= image.get("location_name") %>">
+ </div>
+
+ <div class="field">
+   <label>Longitude:</label>
+   <input type="integer" name="longitude" value="<%= image.get("longitude") %>">
+ </div>
+
+ <div class="field">
+   <label>Latitude:</label>
+   <input type="integer" name="latitude" value="<%= image.get("latitude") %>">
+ </div>
+
+ <div class="field">
+   <label>Uploaded At:</label>
+   <input type="datetime" name="uploaded_at" value="<%= image.get("uploaded_at") %>">
+ </div>
+
+ <div class="actions">
+   <button><%= action %></button>
+ </div>
+
+ <a href="/#images">Back</a>

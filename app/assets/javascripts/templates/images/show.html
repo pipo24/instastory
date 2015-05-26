@@ -1,0 +1,38 @@
+<h1>Image</h1>
+
+<p>
+  <img src="<%= image.get("picture") %>">
+</p>
+
+<p>
+  <b>Title:</b>
+  <a href="/#images/<%= image.get("id") %>"><%= image.get("title") %></a>
+</p>
+
+<p>
+  <b>Tags:</b>
+  <%= image.get("tags") %>
+</p>
+
+<p>
+  <b>Image UserName:</b>
+  <%= image.get("image_username") %>
+</p>
+
+<p>
+  <b>Location Name:</b>
+  <%= image.get("location_name") %>
+  <b>Longitude:</b>
+  <%= image.get("longitude") %>
+  <b>Latitude:</b>
+  <%= image.get("latitude") %>
+</p>
+
+<p>
+  <b>Uploaded At:</b>
+  <%= image.get("uploaded_at") %>
+</p>
+
+<a class="delete" href="/#images/<%= image.get("id") %>/delete">Delete</a>
+<a class="edit" href="/#images/<%= image.get("id") %>/edit">Edit</a>
+<a href="/#images">Back</a>

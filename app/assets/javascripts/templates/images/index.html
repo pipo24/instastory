@@ -1,0 +1,36 @@
+<h1>Listing Images</h1>
+
+<table id="images-table">
+ <tr>
+   <th>Title</th>
+   <th>Image</th>
+   <th>Instagram Tags</th>
+   <th>Instagram User</th>
+   <th>Location Name</th>
+   <th>Longitude</th>
+   <th>Latitude</th>
+   <th>Uploaded At</th>
+ </tr>
+
+ <tbody>
+   <% _.each(images, function(image){ %>
+   <tr>
+     <td>
+       <a href="/#images/<%= image.get("id") %>"><%= image.get("title") %></a>
+     </td>
+     <td><img src="<%= image.get("picture") %>"></td>
+     <td><%= image.get("tags") %></td>
+     <td><%= image.get("image_username") %></td>
+     <td><%= image.get("location_name") %></td>
+     <td><%= image.get("longitude") %></td>
+     <td><%= image.get("latitude") %></td>
+     <td><%= image.get("uploaded_at") %></td>
+   </tr>
+   <% }); %>
+ </tbody>
+
+</table>
+
+<br/>
+
+<a href="/#images/new">New Image</a>

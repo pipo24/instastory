@@ -22,12 +22,9 @@
 
  <p>
    <b>Images:</b>
-  <!--  <#% story.get("images").each_with_index{ |val, index| %>
-   <#%= val[index].picture %>
-   <#% } %> -->
-
-
-   <%= story.get("images")[0].picture %>
+   <% _.each(story.get("images"), function(image){ %>
+   <%= image.picture %>
+   <% }); %>
  </p>
 
  <a class="delete" href="/#stories/<%= story.get("id") %>/delete">Delete</a>

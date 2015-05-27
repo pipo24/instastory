@@ -10,7 +10,7 @@ define([
   'lib/modules/csrf'
   ], function($, Cookie, _, Backbone, ApplicationView, SignInView, SignUpView, UserSession, csrf){
 
-    var Router = Backbone.Router.extend({
+    var mainRouter = Backbone.Router.extend({
       routes: {
         ''               : 'home',
         'users/sign_in'  : 'signIn',
@@ -41,7 +41,7 @@ define([
 
       csrf();
       layout(session);
-      var router = new Router;
+      var router = new mainRouter;
 
       router.on('route:home', function(){
         // setup homepage template/views/etc....

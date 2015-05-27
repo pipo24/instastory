@@ -11,6 +11,7 @@
      <% _.each(stories, function(story){ %>
        <tr>
          <td><a href="/#stories/<%= story.get('id') %>"><%= story.get("title") %></td>
+         <td><%= story.get("description") %></td>
          <td><%= story.get("hashtag") %></td>
        </tr>
      <% }); %>

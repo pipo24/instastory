@@ -10,7 +10,6 @@ user = User.create!(email: "a@g.com", password: "password", password_confirmatio
 
 stories = user.stories.create!(title: "Boom Story", description: "hello i am boom")
 
-# Story.create!(title: "Boom Story", description: "hello i am boom", user_id:1)
 
 stories.images.create!(title: "Boom", picture: "hello" )
-# Image.create!(title: "Boom", story_id:1, picture: "hello" )
+stories.images.create!(title: "Boom 2", picture: "hello 2" )

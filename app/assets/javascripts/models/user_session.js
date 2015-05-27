@@ -9,12 +9,13 @@ define([
         id: null,
         email: '',
         password: '',
-        fullname: '',    
-        role: '',     
-        age: null,     
-        gender: '',     
-        profile_picture: '',   
-        authentication_token: ''      
+        fullname: '',
+        role: '',
+        age: null,
+        gender: '',
+        profile_picture: '',
+        stories: [],
+        authentication_token: ''
       },
       isLoggedIn: function() {
         return !!this.get("authentication_token");

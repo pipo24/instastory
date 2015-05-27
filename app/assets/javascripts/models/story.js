@@ -11,6 +11,7 @@ define([
       description: "",
       user: "",
       images: "",
+      hashtag: "",
     }
   });
 });

@@ -6,6 +6,11 @@ class User < ActiveRecord::Base
 
   before_save :ensure_authentication_token
 
+  # ASSOCIATIONS
+  has_many :stories
+  has_many :images, through: :stories
+
+  # VALIDATIONS
   validates :fullname, presence: true, length: { maximum: 25 }
   validates :age, length: { maximum: 2 }, numericality: true
   validates :gender, inclusion: { in: %w(male female NA),

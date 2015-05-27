@@ -5,11 +5,13 @@ class StoriesController < ApplicationController
   # GET /stories.json
   def index
     @stories = Story.all
+    render json: @stories, root: false
   end
 
   # GET /stories/1
   # GET /stories/1.json
   def show
+    render json: @story, root: false
   end
 
   # GET /stories/new
@@ -69,6 +71,6 @@ class StoriesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def story_params
-      params.require(:story).permit(:user, :title, :description, :image, :hashtag)
+      params.require(:story).permit(:user_id, :title, :description, :image, :hashtag)
     end
 end

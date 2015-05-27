@@ -10,7 +10,6 @@ class SessionsController < Devise::SessionsController
         id: user.id,
         email: user.email,
         fullname: user.fullname,
-        role: user.role,
         age: user.age,
         gender: user.gender,
         profile_picture: user.profile_picture,

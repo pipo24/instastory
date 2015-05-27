@@ -43,7 +43,6 @@ define([
             Backbone.history.navigate('stories/'+ data.id, true);
           },
           error: function(model, response){
-            console.log(response)
             var errors = response.responseJSON;
             $('.alert ul').empty();
             _(errors).each(function(error, key){

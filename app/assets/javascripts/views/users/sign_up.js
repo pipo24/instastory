@@ -23,7 +23,10 @@ define([
         var user = new UserRegistration();
         user.save({
           email: $("input[name='email']").val(),
-          firstname: $("input[name='firstname']").val(),
+          fullname: $("input[name='fullname']").val(),
+          age: $("input[name='age']").val(),
+          gender: $("select[name='gender']").val(),
+          profile_picture: $("input[name='profile_picture']").val(),
           password: $("input[name='password']").val(),
           password_confirmation: $("input[name='password_confirmation']").val()
         }, {

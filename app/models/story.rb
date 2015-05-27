@@ -1,6 +1,6 @@
 class Story < ActiveRecord::Base
   # ASSOCIATIONS
-  has_and_belong_to_many :images
+  has_and_belongs_to_many :images
   belongs_to :user
 
   # VALIDATIONS

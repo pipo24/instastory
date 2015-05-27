@@ -1,3 +1,4 @@
 class UserSerializer < ActiveModel::Serializer
-  attributes :id
+  has_many :stories
+  attributes :id, :email, :authentication_token, :fullname, :age, :gender, :profile_picture
 end

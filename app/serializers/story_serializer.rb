@@ -1,3 +1,4 @@
 class StorySerializer < ActiveModel::Serializer
-  attributes :id
+  has_many :images, except: [:story]
+  attributes :id, :title, :description
 end

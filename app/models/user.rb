@@ -7,7 +7,7 @@ class User < ActiveRecord::Base
   before_save :ensure_authentication_token
 
   # ASSOCIATIONS
-  has_many :stories
+  has_many :stories, dependent: :destroy
   has_many :images, through: :stories
 
   # VALIDATIONS

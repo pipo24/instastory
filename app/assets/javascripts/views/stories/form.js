@@ -41,6 +41,14 @@ define([
         this.story.save(storyData, {
           success: function(data){
             Backbone.history.navigate('stories/'+ data.id, true);
+          },
+          error: function(model, response){
+            console.log(response)
+            var errors = response.responseJSON;
+            $('.alert ul').empty();
+            _(errors).each(function(error, key){
+              $('.alert ul').append("<li>"+key.toUpperCase()+" "+error+"</li>")
+            })
           }
         });
       }

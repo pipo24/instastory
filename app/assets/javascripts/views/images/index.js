@@ -13,6 +13,7 @@ define([
       var collection = new ImagesCollection();
       var data = collection.fetch({
         success: function(data) {
+          console.log("yo")
           self.render(data)
         }
       });
@@ -20,6 +21,8 @@ define([
     render: function(data){
       var template = _.template(ImagesTemplate);
       this.$el.html(template({images: data.models}));
+      // $('body').append(template({images: data.models}))
+      return this.$el;
     }
   });
 

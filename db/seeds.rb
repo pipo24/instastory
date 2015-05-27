@@ -6,8 +6,11 @@
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
-User.create!(email: "a@g.com", password: "password", password_confirmation: "password", fullname: "filippo", age: 22, gender: "male")
+user = User.create!(email: "a@g.com", password: "password", password_confirmation: "password", fullname: "filippo", age: 22, gender: "male")
 
-Story.create!(title: "Boom Story", description: "hello i am boom", user_id:1)
+stories = user.stories.create!(title: "Boom Story", description: "hello i am boom")
 
-Image.create!(title: "Boom", story_id:1 )
+# Story.create!(title: "Boom Story", description: "hello i am boom", user_id:1)
+
+stories.images.create!(title: "Boom", picture: "hello" )
+# Image.create!(title: "Boom", story_id:1, picture: "hello" )

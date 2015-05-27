@@ -5,7 +5,7 @@ define([
   'views/stories/form'
   ], function(Backbone, StoriesIndexView, StoriesShowView, StoriesFormView){
 
-    var Router = Backbone.Router.extend({
+    var StoriesRouter = Backbone.Router.extend({
       routes: {
         'stories'         : 'index',
         'stories/new'     : 'new',
@@ -15,9 +15,7 @@ define([
     });
 
     var initialize = function() {
-
-      var router = new Router;
-
+      var router = new StoriesRouter();
       router.on('route:index', function(){
         new StoriesIndexView();
       });

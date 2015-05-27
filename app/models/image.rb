@@ -1,5 +1,5 @@
 class Image < ActiveRecord::Base
   # ASSOCIATIONS
-  belongs_to :stories
+  belongs_to :story
 
 end

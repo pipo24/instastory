@@ -2,7 +2,7 @@
 
  <p>
    <b>Title:</b>
-   <a href="/#stories/<%= story.get('id') %>"><%= story.get("title") %></a>
+   <%= story.get("title") %>
  </p>
 
  <p>
@@ -22,7 +22,12 @@
 
  <p>
    <b>Images:</b>
-   <%= story.get("images") %>
+  <!--  <#% story.get("images").each_with_index{ |val, index| %>
+   <#%= val[index].picture %>
+   <#% } %> -->
+
+
+   <%= story.get("images")[0].picture %>
  </p>
 
  <a class="delete" href="/#stories/<%= story.get("id") %>/delete">Delete</a>

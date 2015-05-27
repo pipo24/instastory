@@ -15,7 +15,6 @@ define([
         ''               : 'home',
         'users/sign_in'  : 'signIn',
         'users/sign_up'  : 'signUp',
-        '*actions'       : 'defaultAction'
       }
     });
 
@@ -42,10 +41,10 @@ define([
 
       csrf();
       layout(session);
-
       var router = new Router;
 
       router.on('route:home', function(){
+        // setup homepage template/views/etc....
       });
 
       router.on('route:signUp', function(){

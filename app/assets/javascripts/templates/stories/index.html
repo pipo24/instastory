@@ -4,18 +4,14 @@
    <tr>
      <th>Title</th>
      <th>Description</th>
-     <th>User</th>
      <th>Instagram Hashtag</th>
-     <th>Images</th>
    </tr>
 
    <tbody>
      <% _.each(stories, function(story){ %>
        <tr>
          <td><a href="/#stories/<%= story.get('id') %>"><%= story.get("title") %></td>
-         <td><%= story.get("user") %></td>
          <td><%= story.get("hashtag") %></td>
-         <td><%= story.get("images") %></td>
        </tr>
      <% }); %>
    </tbody>

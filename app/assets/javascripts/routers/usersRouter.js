@@ -1,19 +1,28 @@
 define([
   'backbone',
-  'views/users/sign_in',
-  'views/users/sign_up',
-  ], function(Backbone, SignInView, SignUpView){
+  'views/users/index',
+  'views/users/show',
+  ], function(Backbone, UsersIndexView, UsersShowView){
 
-    var Router = Backbone.Router.extend({
+    var usersRouter = Backbone.Router.extend({
       routes: {
-        'users/sign_in'  : 'signIn',
-        'users/sign_up'  : 'signUp',
+        'users'          : 'usersIndex',
+        'users/:id'      : 'usersShow',
       }
     });
 
-    var initialize = function(session) {
+    var initialize = function() {
 
-      var router = new Router;
+      var router = new usersRouter;
+
+      router.on('route:usersIndex', function(){
+        new UsersIndexView();
+      });
+
+      router.on('route:usersShow', function(id){
+        new UsersShowView(id);
+      });
+
     }
 
     return {

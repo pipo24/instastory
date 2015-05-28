@@ -6,6 +6,16 @@ class User < ActiveRecord::Base
 
   before_save :ensure_authentication_token
 
+  # ASSOCIATIONS
+  has_many :stories, dependent: :destroy
+  has_many :images, through: :stories
+
+  # VALIDATIONS
+  validates :fullname, presence: true, length: { maximum: 25 }
+  validates :age, length: { maximum: 2 }, numericality: true
+  validates :gender, inclusion: { in: %w(male female NA),
+    message: "%{value} is not a valid gender" }
+
   def generate_authentication_token
     loop do
       token = Devise.friendly_token

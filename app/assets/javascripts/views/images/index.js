@@ -20,6 +20,7 @@ define([
     render: function(data){
       var template = _.template(ImagesTemplate);
       this.$el.html(template({images: data.models}));
+      return this.$el;
     }
   });
 

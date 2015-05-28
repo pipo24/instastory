@@ -14,7 +14,8 @@ define([
       role: '',     
       age: null,     
       gender: '',     
-      profile_picture: '',     
+      profile_picture: '',
+      stories: [],
     }
   });
 });

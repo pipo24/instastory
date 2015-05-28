@@ -1,4 +1,7 @@
 <h1>Story</h1>
+<div class="alert hide" role="alert">
+  <ul></ul>
+</div>
 <div class="field">
   <label>Title:</label>
   <input type="text" name="title" value="<%= story.get("title") %>">
@@ -12,6 +15,11 @@
 <div class="field">
   <label>User:</label>
   <input type="text" name="user" value="<%= story.get("user") %>">
+</div>
+
+<div class="field">
+  <label>Instagram Hashtag:</label>
+  <input type="text" name="hashtag" value="<%= story.get("hashtag") %>">
 </div>
 
 <div class="field">

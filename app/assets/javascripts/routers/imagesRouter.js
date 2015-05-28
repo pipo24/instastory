@@ -5,7 +5,7 @@ define([
   'views/images/form'
   ], function(Backbone, ImagesIndexView, ImagesShowView, ImagesFormView){
 
-    var Router = Backbone.Router.extend({
+    var ImagesRouter = Backbone.Router.extend({
       routes: {
         'images'         : 'index',
         'images/new'     : 'new',
@@ -16,7 +16,7 @@ define([
 
     var initialize = function() {
 
-      var router = new Router;
+      var router = new ImagesRouter;
 
       router.on('route:index', function(){
         new ImagesIndexView();

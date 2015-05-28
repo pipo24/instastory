@@ -2,7 +2,7 @@
 
  <p>
    <b>Title:</b>
-   <a href="/#stories/<%= story.get('id') %>"><%= story.get("title") %></a>
+   <%= story.get("title") %>
  </p>
 
  <p>
@@ -16,8 +16,15 @@
  </p>
 
  <p>
+   <b>Instagram Hashtag:</b>
+   <%= story.get("hashtag") %>
+ </p>
+
+ <p>
    <b>Images:</b>
-   <%= story.get("images") %>
+   <% _.each(story.get("images"), function(image){ %>
+   <%= image.picture %>
+   <% }); %>
  </p>
 
  <a class="delete" href="/#stories/<%= story.get("id") %>/delete">Delete</a>

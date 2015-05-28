@@ -1,9 +1,18 @@
 Rails.application.routes.draw do
-  devise_for :users, controllers: { registrations: 'registrations', sessions: "sessions" }
+  devise_for :users, controllers: {
+    registrations: 'registrations', 
+    sessions: "sessions"
+  }
+
+  # Used for login & logout
   devise_scope :user do 
-    get "/users/:authentication_token", to: "sessions#show"
-    delete "/users/:authentication_token", to: "sessions#destroy"
+    get "/user/:authentication_token", to: "sessions#show"
+    delete "/user/:authentication_token", to: "sessions#destroy"
   end
+
+  # Ensure that show (as member) does not conflict users/:id
+  resources :users, only: [:index, :show]
+
   resources :images
   resources :stories
   root "statics#index"

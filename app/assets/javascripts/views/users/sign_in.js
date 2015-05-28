@@ -12,6 +12,7 @@ define([
       },
 
       render: function() {
+        console.log("sign_in")
         var template = _.template(UserSignInTemplate);
         this.$el.html(template());
         return this.el;

@@ -9,6 +9,7 @@ define([
   ], function($, _, Backbone, Router, StoriesRouter, ImagesRouter, UsersRouter){
 
     var initialize = function(){
+      console.log("1");
       Router.initialize();
       StoriesRouter.initialize();
       ImagesRouter.initialize();

@@ -12,9 +12,9 @@ define([
 
     var mainRouter = Backbone.Router.extend({
       routes: {
-        ''               : 'home',
-        'users/sign_in'  : 'signIn',
-        'users/sign_up'  : 'signUp',
+        ''         : 'home',
+        'sign_in'  : 'signIn',
+        'sign_up'  : 'signUp',
       }
     });
 
@@ -27,7 +27,7 @@ define([
       
       var token = $.cookie("authentication_token");
       if (token != null) {
-        $.getJSON("/users/"+token, function(data){
+        $.getJSON("/user/"+token, function(data){
           var session = new UserSession(data);
           callback(session)
         });
@@ -38,7 +38,6 @@ define([
     }
 
     var setRouter = function(session){
-
       csrf();
       layout(session);
       var router = new mainRouter;
@@ -52,6 +51,7 @@ define([
       });
 
       router.on('route:signIn', function(){
+        console.log('route:signIn');
         new SignInView(session).render();
       });
 

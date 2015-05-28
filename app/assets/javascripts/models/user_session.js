@@ -23,7 +23,7 @@ define([
       logOut: function(){
         var self = this;
         $.ajax({
-          url: "/users/"+self.get("authentication_token"),
+          url: "/user/"+self.get("authentication_token"),
           method: "DELETE",
           dataType: "json"
         }).done(function(data){

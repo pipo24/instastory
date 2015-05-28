@@ -10,7 +10,7 @@
    <tbody>
      <% _.each(stories, function(story){ %>
        <tr>
-         <td><a href="/#stories/<%= story.get('id') %>"><%= story.get("title") %></td>
+         <td><a href="/#stories/<%= story.get('id') %>"><%= story.get("title") %></a></td>
          <td><%= story.get("description") %></td>
          <td><%= story.get("hashtag") %></td>
        </tr>

@@ -31,7 +31,9 @@
 
 <p>
    <b>Stories:</b>
-   <%= user.get("stories")[0] %>
+   <% _.each(user.get("stories"), function(story){ %>
+   <a href="/#stories/<%= story.id %>"><%= story.title %></a>
+   <% }); %>
 </p>
 
 <a class="delete" href="/#users/<%= user.get("id") %>/delete">Delete</a>

@@ -13,7 +13,6 @@ define([
         this.user = new User({id: id});
         this.user.fetch({
           success: function(data) {
-            console.log(data)
             self.render(data);
           }
         })

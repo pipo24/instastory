@@ -20,15 +20,15 @@ client = Instagram.client(client_id: ENV['INSTAGRAM_FINAL_PROJECT_API_KEY'])
 
 r = client.tag_recent_media('cat')
 r.each do |image|
-  story.images.create!({
+  Image.create!({
     title:          image.filter, 
     tags:           image.tags, 
     image_username: image.caption.from.full_name, 
-    # longitude:      image[:location][:longitude], 
-    # latitude:       image[:location][:latitude], 
-    # location_name:  image[:location][:location_name], 
+    # longitude:      image.try(location).longitude, 
+    # latitude:       image.try(location).latitude, 
+    # location_name:  image.try(location).name, 
     uploaded_at:    image.created_time,
-    picture:        image[:images].standard_resolution.url, 
+    picture:        image.images.standard_resolution.url, 
     story_id:       story.id
   })
 end

@@ -1,33 +1,32 @@
 <h1>Story</h1>
 
- <p>
+<p>
    <b>Title:</b>
    <%= story.get("title") %>
- </p>
+</p>
 
- <p>
+<p>
    <b>Description:</b>
    <%= story.get("description") %>
- </p>
+</p>
 
- <p>
+<p>
    <b>User:</b>
    <%= story.get("user") %>
- </p>
+</p>
 
- <p>
+<p>
    <b>Instagram Hashtag:</b>
    <%= story.get("hashtag") %>
- </p>
+</p>
 
- <p>
+<p>
    <b>Images:</b>
-   <img src="<%= story.get("images")[0].picture %>">
-  <!--  <#% _.each(story.get("images"), function(image){ %>
-   <img href="<#%= image.picture %>"><#%= image.picture %>
-   <#% }); %> -->
- </p>
+   <% _.each(story.get("images"), function(image){ %>
+   <img href="<%= image.picture %>"><%= image.picture %>
+   <% }); %>
+</p>
 
- <a class="delete" href="/#stories/<%= story.get("id") %>/delete">Delete</a>
- <a class="edit" href="/#stories/<%= story.get("id") %>/edit">Edit</a>
- <a href="/#stories">Back</a>
+<a class="delete" href="/#stories/<%= story.get("id") %>/delete">Delete</a>
+<a class="edit" href="/#stories/<%= story.get("id") %>/edit">Edit</a>
+<a href="/#stories">Back</a>

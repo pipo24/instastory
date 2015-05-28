@@ -1,4 +1,5 @@
 class StoriesController < ApplicationController
+  # require 'get_instagram_photos'
   before_action :set_story, only: [:show, :update, :destroy]
 
   # GET /stories
@@ -18,6 +19,9 @@ class StoriesController < ApplicationController
   # POST /stories.json
   def create
     @story = Story.new(story_params)
+
+    # Used to save Images from Instagram to a Story 
+    # GetInstagramPhotos.callInstagram(hashtag, story)
 
     respond_to do |format|
       if @story.save

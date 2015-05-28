@@ -1,16 +1,6 @@
 
 user = User.create!(email: "a@g.com", password: "password", password_confirmation: "password", fullname: "filippo", age: 22, gender: "male")
 
-# stories = user.stories.create!(title: "Boom Story", description: "hello i am boom")
-
-
-# stories.images.create!(title: "Boom", picture: "hello" )
-# stories.images.create!(title: "Boom 2", picture: "hello 2" )
-
-
-
-
-
 
 require 'instagram'
 
@@ -18,7 +8,7 @@ story = user.stories.create!(title: "Test", description: "testing description", 
 
 client = Instagram.client(client_id: ENV['INSTAGRAM_FINAL_PROJECT_API_KEY'])
 
-r = client.tag_recent_media('cat')
+r = client.tag_recent_media('dog')
 r.each do |image|
   Image.create!({
     title:          image.filter, 

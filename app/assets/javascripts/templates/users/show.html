@@ -1,0 +1,39 @@
+<h1>Book</h1>
+
+<p>
+ <img src="<%= user.get("profile_picture") %>">
+</p>
+
+<p>
+   <b>Id:</b>
+   <%= user.get("id") %>
+</p>
+
+<p>
+   <b>Name:</b>
+   <a href="/#users/<%= user.get("id") %>"><%= user.get("fullname") %></a>
+</p>
+
+<p>
+   <b>Email:</b>
+   <%= user.get("email") %>
+</p>
+
+<p>
+   <b>Age:</b>
+   <%= user.get("age") %>
+</p>
+
+<p>
+   <b>Gender:</b>
+   <%= user.get("gender") %>
+</p>
+
+<p>
+   <b>Stories:</b>
+   <%= user.get("stories")[0] %>
+</p>
+
+<a class="delete" href="/#users/<%= user.get("id") %>/delete">Delete</a>
+<a class="edit" href="/#users/<%= user.get("id") %>/edit">Edit</a>
+<a href="/#users">Back</a>

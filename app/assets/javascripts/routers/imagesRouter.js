@@ -19,7 +19,6 @@ define([
       var router = new ImagesRouter;
 
       router.on('route:index', function(){
-        console.log("index images")
         new ImagesIndexView();
       });
 

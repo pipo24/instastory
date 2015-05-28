@@ -1,0 +1,28 @@
+<h1>Listing Users</h1>
+
+<table id="users-table">
+ <tr>
+   <th></th>
+   <th>Name</th>
+   <th>Id</th>
+   <th>Email</th>
+   <th>Gender</th>
+   <th>Age</th>
+ </tr>
+
+ <tbody>
+   <% _.each(users, function(user){ %>
+   <tr>
+     <td><img src="<%= user.get("profile_picture") %>"></td>
+     <td><a href="/#users/<%= user.get("id") %>"><%= user.get("fullname") %></td>
+     <td><%= user.get("id") %></td> 
+     <td><%= user.get("email") %></td>
+     <td><%= user.get("gender") %></td>
+     <td><%= user.get("age") %></td>
+   </tr>
+   <% }); %>
+ </tbody>
+
+</table>
+
+<br/>

@@ -4,6 +4,7 @@ ruby "2.2.1"
 
 gem 'devise', '3.4.1'
 gem 'carrierwave', '0.10.0'
+gem 'instagram'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.1'
@@ -37,6 +38,8 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 # gem 'capistrano-rails', group: :development
 
 group :development, :test do
+  gem 'pry'
+
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug'
 

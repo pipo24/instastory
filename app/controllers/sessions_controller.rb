@@ -23,12 +23,7 @@ class SessionsController < Devise::SessionsController
   end
 
   def show
-    if current_user
-      render json: current_user
-    else
-      # @user   = User.find(params[:id])
-      render json: @user, root: false
-    end
+    render json: current_user
   end
 
   def destroy

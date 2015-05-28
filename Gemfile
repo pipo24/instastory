@@ -2,8 +2,17 @@ source 'https://rubygems.org'
 
 ruby "2.2.1"
 
+# DEVISE
 gem 'devise', '3.4.1'
+
+# SERIALIZERS GEM
 gem 'active_model_serializers', '0.9.3'
+
+# STYLING GEMS
+gem 'bourbon', '4.2.2'
+gem 'neat', '1.7.2'
+gem 'bitters', '1.0.0'
+gem 'refills', '0.1.0'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.1'

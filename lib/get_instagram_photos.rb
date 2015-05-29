@@ -13,15 +13,16 @@ class GetInstagramPhotos
   def saveToDatabase(r, story)
     r.each do |image|
       story.images.create!({
-        title:          image.filter, 
+        title:          image.caption.text.split('#')[0], 
         tags:           image.tags, 
         image_username: image.caption.from.full_name, 
-        # longitude:      image.try(location).longitude, 
-        # latitude:       image.try(location).latitude, 
-        # location_name:  image.try(location).name, 
+        # longitude:      image.location.longitude, 
+        # latitude:       image.location.latitude, 
+        # location_name:  image.location.name, 
         uploaded_at:    image.created_time,
-        picture:        image.images.standard_resolution.url
-        })
+        picture:        image.images.standard_resolution.url, 
+        story_id:       story.id
+      })
     end
   end
 

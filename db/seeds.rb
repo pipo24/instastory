@@ -10,18 +10,21 @@ client = Instagram.client(client_id: ENV['INSTAGRAM_FINAL_PROJECT_API_KEY'])
 
 r = client.tag_recent_media('dog')
 r.each do |image|
-  Image.create!({
-    title:          image.filter, 
+  url =  image.images.standard_resolution.url
+  im = Image.create({
+    title:          image.caption.text.split('#')[0], 
     tags:           image.tags, 
     image_username: image.caption.from.full_name, 
-    # longitude:      image.try(location).longitude, 
-    # latitude:       image.try(location).latitude, 
-    # location_name:  image.try(location).name, 
+    # longitude:      image.location.longitude, 
+    # latitude:       image.location.latitude, 
+    # location_name:  image.location.name, 
     uploaded_at:    image.created_time,
-    picture:        image.images.standard_resolution.url, 
+    picture:        url, 
     story_id:       story.id
   })
+  binding.pry
+  puts im.attributes[:picture]
 end
 
-binding.pry
-# [:images][:standard_resolution][:url]
+#binding.pry
+

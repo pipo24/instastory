@@ -1,11 +1,34 @@
-<header>
-  <ul>
-    <li><a href="/#">Home</a></li>
-    <li><a href="/#stories">Stories</a></li>
-    <li><a href="/#stories/new">New Story</a></li>
-    <li><a href="/#images">Images</a></li>
-    <li><a href="/#images/new">New Image</a></li>
-    <li><a href="/#users">Users</a></li>
-    <li id="user-menu"></li>
-  </ul>
+<header class="centered-navigation" role="banner">
+  <div class="centered-navigation-wrapper">
+    <a href="javascript:void(0)" class="mobile-logo">
+      <img src="https://raw.githubusercontent.com/thoughtbot/refills/master/source/images/placeholder_logo_3_dark.png" alt="Logo image">
+    </a>
+    <a href="javascript:void(0)" id="js-centered-navigation-mobile-menu" class="centered-navigation-mobile-menu">MENU</a>
+    <nav role="navigation">
+      <ul id="js-centered-navigation-menu" class="centered-navigation-menu show">
+        <li class="nav-link more"><a href="/#images">Images</a>
+          <ul class="submenu">
+            <li><a href="/#images/new">New Image</a></li>
+          </ul>
+        </li>
+        <li class="nav-link more"><a href="/#stories">Stories</a>
+          <ul class="submenu">
+            <li><a href="/#stories/new">New Story</a></li>
+          </ul>
+        </li>
+        <li class="nav-link"><a href="javascript:void(0)">About Us</a></li>
+        <li class="nav-link logo">
+          <a href="/#" class="logo">
+            <img src="https://raw.githubusercontent.com/thoughtbot/refills/master/source/images/placeholder_logo_3_dark.png" alt="Logo image">
+          </a>
+        </li>
+
+        <li class="nav-link"><a href="/#users">Users</a></li>
+        <li class="nav-link more"><a href="javascript:void(0)">Register</a>
+          <ul class="submenu" id="user-menu">
+          </ul>
+        </li>
+      </ul>
+    </nav>
+  </div>
 </header>

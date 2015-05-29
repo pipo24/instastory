@@ -23,7 +23,13 @@
 <p>
    <b>Images:</b>
    <% _.each(story.get("images"), function(image){ %>
-   <img href="<%= image.picture %>"><%= image.picture %>
+   <ul>
+      <li>
+         <a href="/#images/<%= image.id %>">
+            <img src="<%= image.picture %>">
+         </a>
+      </li>
+   </ul>
    <% }); %>
 </p>
 

@@ -1,9 +1,4 @@
-<h1>Story</h1>
-
-<p>
-   <b>Title:</b>
-   <%= story.get("title") %>
-</p>
+<h1><%= story.get("title") %></h1>
 
 <p>
    <b>Description:</b>
@@ -11,12 +6,12 @@
 </p>
 
 <p>
-   <b>User:</b>
-   <%= story.get("user") %>
+   <b>Owner:</b>
+   <%= story.get("user").fullname %>
 </p>
 
 <p>
-   <b>Instagram Hashtag:</b>
+   <b>This Stories' Instagram Hashtag:</b>
    <%= story.get("hashtag") %>
 </p>
 
@@ -25,9 +20,18 @@
    <% _.each(story.get("images"), function(image){ %>
    <ul>
       <li>
+         <p><%= image.title %></p>
+      </li>
+      <li>
          <a href="/#images/<%= image.id %>">
             <img src="<%= image.picture %>">
          </a>
+      </li>
+      <li>
+      <a class="edit" href="/#images/<%= image.id %>/edit">Edit Image</a>
+      </li>
+      <li>
+      <a class="delete-image" data-image-id="<%= image.id %>" href="/#images/<%= image.id %>/delete">Delete Image</a>
       </li>
    </ul>
    <% }); %>

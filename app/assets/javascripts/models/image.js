@@ -15,7 +15,7 @@ define([
       latitude: null,
       location_name: "",
       uploaded_at: null,
-      story_id: "",
+      story_id: null,
     }
   });
 });

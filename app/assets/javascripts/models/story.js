@@ -9,9 +9,9 @@ define([
       id: null,
       title: "",
       description: "",
-      user_id: "",
-      images: [],
       hashtag: "",
+      user_id: null,
+      images: [],
     }
   });
 });

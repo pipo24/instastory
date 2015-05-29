@@ -12,12 +12,12 @@ r = client.tag_recent_media('dog')
 r.each do |image|
   Image.create!({
     title:          image.caption.text.split('#')[0], 
-    tags:           image.tags, 
+    tags:           image.tags.join(", #").insert(0, "#"), 
     image_username: image.caption.from.full_name,
     # longitude:      image.location.longitude,
     # latitude:       image.location.latitude,
     # location_name:  image.location.name,
-    uploaded_at:    Time.at(image.created_time.to_i).to_s,
+    uploaded_at:    Time.at(image.created_time.to_i).to_date.to_s,
     picture:        image.images.standard_resolution.url, 
     story_id:       story.id
   })

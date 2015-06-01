@@ -10,12 +10,11 @@ define([
         email: '',
         password: '',
         fullname: '',
-        role: '',
         age: null,
         gender: '',
         profile_picture: '',
         stories: [],
-        authentication_token: ''
+        authentication_token: null,
       },
       isLoggedIn: function() {
         return !!this.get("authentication_token");
@@ -26,7 +25,7 @@ define([
           url: "/user/"+self.get("authentication_token"),
           method: "DELETE",
           dataType: "json"
-        }).done(function(data){
+        }).done(function(){
           $.removeCookie("authentication_token");
           // Clear all of the fields of the current instance
           self.clear().set(self.defaults);

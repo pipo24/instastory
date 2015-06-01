@@ -1,6 +1,6 @@
 <ul>
   <% if(user.isLoggedIn()){ %>
-  <li><a href="/#sign_in"><%= user.get("fullname") %>'s Account</a></li>
+  <li><a href="/#users"><%= user.get("fullname") %>'s Account</a></li>
   <li><a href="#" id="sign-out">Logout</a></li>
   <% } else { %>
   <li><a href="/#sign_in">Login</a></li>

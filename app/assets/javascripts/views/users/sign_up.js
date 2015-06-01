@@ -8,17 +8,14 @@ define([
 
     return Backbone.View.extend({
       el: "main",
-
       render: function() {
         var template = _.template(UserSignUpTemplate);
         this.$el.html(template());
         return this.el;
       },
-
       events: {
         "click #signup": "signUp"
       },
-
       signUp: function(){
         var user = new UserRegistration();
         user.save({

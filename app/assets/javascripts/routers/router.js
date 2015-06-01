@@ -15,7 +15,7 @@ define([
     var mainRouter = Backbone.Router.extend({
       routes: {
         ''         : 'home',
-        'about'   : 'about',
+        'about'    : 'about',
         'sign_in'  : 'signIn',
         'sign_up'  : 'signUp',
       }
@@ -26,7 +26,7 @@ define([
     }
 
     var getCurrentUser = function(callback){
-      
+
       var token = $.cookie("authentication_token");
       if (token != null) {
         $.getJSON("/user/"+token, function(data){
@@ -45,12 +45,10 @@ define([
       var router = new mainRouter;
 
       router.on('route:home', function(){
-        // setup homepage template/views/etc....
         new HomeView().render()
       });
 
       router.on('route:about', function(){
-        // setup about us template/views/etc....
         new AboutView().render()
       });
 

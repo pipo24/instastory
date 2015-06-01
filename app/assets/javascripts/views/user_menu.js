@@ -11,16 +11,13 @@ define([
         this.model.on("successfulSignIn", this.render, this);
         this.model.on("successfulSignOut", this.render, this);
       },
-
       events: {
         "click #sign-out" : "signOut"
       },
-
       signOut: function() {
         this.model.logOut();
         Backbone.history.navigate('/#home', true);
       },
-
       render: function(){
         var template = _.template(UserMenuTemplate);
         this.$el.html(template({user: this.model}));

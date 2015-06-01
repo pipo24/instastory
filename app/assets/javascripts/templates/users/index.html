@@ -1,28 +1,22 @@
-<h1>Listing Users</h1>
+<div class="users-index">
+  <div class="cards">
+    <div class="card">
+      <% _.each(users, function(user){ %>
+      <div class="card-image">
+       <img src="<%= user.get("profile_picture") %>" alt="Profile Picture">
+     </div>
+     <div class="card-header">
+       <a href="/#users/<%= user.get("id") %>"><%= user.get("fullname") %>
+       </div>
+       <div class="card-copy">
+         <p>
+           <%= user.get("email") %> <br>
+           <%= user.get("gender") %> <br>
+           <%= user.get("age") %> <br>
+         </p>
+       </div>
+       <% }); %>
+     </div>
+   </div>
 
-<table id="users-table">
- <tr>
-   <th></th>
-   <th>Name</th>
-   <th>Id</th>
-   <th>Email</th>
-   <th>Gender</th>
-   <th>Age</th>
- </tr>
-
- <tbody>
-   <% _.each(users, function(user){ %>
-   <tr>
-     <td><img src="<%= user.get("profile_picture") %>"></td>
-     <td><a href="/#users/<%= user.get("id") %>"><%= user.get("fullname") %></td>
-     <td><%= user.get("id") %></td> 
-     <td><%= user.get("email") %></td>
-     <td><%= user.get("gender") %></td>
-     <td><%= user.get("age") %></td>
-   </tr>
-   <% }); %>
- </tbody>
-
-</table>
-
-<br/>
+ </div>

@@ -27,9 +27,10 @@ define([
 
     var getCurrentUser = function(callback){
 
-      var token = $.cookie("authentication_token");
+      var token = $.cookie("authentication_token").to_s;
       if (token != null) {
         $.getJSON("/user/"+token, function(data){
+          console.log(data)
           var session = new UserSession(data.user);
           callback(session)
         });

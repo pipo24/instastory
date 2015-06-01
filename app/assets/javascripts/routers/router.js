@@ -26,7 +26,6 @@ define([
     }
 
     var getCurrentUser = function(callback){
-      var session = new UserSession();
       
       var token = $.cookie("authentication_token");
       if (token != null) {
@@ -60,7 +59,6 @@ define([
       });
 
       router.on('route:signIn', function(){
-        console.log('route:signIn');
         new SignInView(session).render();
       });
 

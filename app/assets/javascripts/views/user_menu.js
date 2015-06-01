@@ -18,6 +18,7 @@ define([
 
       signOut: function() {
         this.model.logOut();
+        Backbone.history.navigate('/#home', true);
       },
 
       render: function(){

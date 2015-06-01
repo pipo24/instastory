@@ -35,6 +35,7 @@ define([
             _(response).each(function(message){
               $('.alert ul').append("<li>"+message+"</li>")
             })
+            Backbone.history.navigate('/stories', true);
           },
           error: function(model, response){
             var errors = response.responseJSON;

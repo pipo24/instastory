@@ -30,7 +30,7 @@ define([
       var token = $.cookie("authentication_token");
       if (token != null) {
         $.getJSON("/user/"+token, function(data){
-          var session = new UserSession(data);
+          var session = new UserSession(data.user);
           callback(session)
         });
       } else {

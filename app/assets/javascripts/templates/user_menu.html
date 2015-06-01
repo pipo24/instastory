@@ -1,9 +1,9 @@
 <ul>
   <% if(user.isLoggedIn()){ %>
-  <li><a href="/#sign_in">My Account(<%= user.get("email") %>)</a></li>
-  <li><a href="#" id="sign-out">Sign out</a></li>
+  <li><a href="/#sign_in"><%= user.get("fullname") %>'s Account</a></li>
+  <li><a href="#" id="sign-out">Logout</a></li>
   <% } else { %>
-  <li><a href="/#sign_in">Sign in</a></li>
-  <li><a href="/#sign_up">Sign up</a></li>
+  <li><a href="/#sign_in">Login</a></li>
+  <li><a href="/#sign_up">Register</a></li>
   <% } %>
 </ul>

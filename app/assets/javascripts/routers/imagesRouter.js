@@ -8,7 +8,7 @@ define([
     var ImagesRouter = Backbone.Router.extend({
       routes: {
         'images'         : 'index',
-        'images/new'     : 'new',
+        // 'images/new'     : 'new', //DONT NEED - IMG CREATED FROM STORY
         'images/:id'     : 'show',
         'images/:id/edit': 'edit',
       }
@@ -22,9 +22,9 @@ define([
         new ImagesIndexView();
       });
 
-      router.on('route:new', function(){
-        new ImagesFormView();
-      });
+      // router.on('route:new', function(){
+      //   new ImagesFormView();
+      // });
 
       router.on('route:show', function(id){
         new ImagesShowView(id)

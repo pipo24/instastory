@@ -4,15 +4,18 @@ define([
   'underscore',
   'backbone',
   'views/application',
+  'views/static_pages/home',
+  'views/static_pages/about',
   'views/users/sign_in',
   'views/users/sign_up',
   'models/user_session',
   'lib/modules/csrf'
-  ], function($, Cookie, _, Backbone, ApplicationView, SignInView, SignUpView, UserSession, csrf){
+  ], function($, Cookie, _, Backbone, ApplicationView, HomeView, AboutView, SignInView, SignUpView, UserSession, csrf){
 
     var mainRouter = Backbone.Router.extend({
       routes: {
         ''         : 'home',
+        'about'   : 'about',
         'sign_in'  : 'signIn',
         'sign_up'  : 'signUp',
       }
@@ -44,6 +47,12 @@ define([
 
       router.on('route:home', function(){
         // setup homepage template/views/etc....
+        new HomeView().render()
+      });
+
+      router.on('route:about', function(){
+        // setup about us template/views/etc....
+        new AboutView().render()
       });
 
       router.on('route:signUp', function(){

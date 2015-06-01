@@ -18,10 +18,8 @@ class StoriesController < ApplicationController
   # POST /stories
   # POST /stories.json
   def create
-    @story = Story.new(story_params)
-
-    # Used to save Images from Instagram to a Story 
-    # GetInstagramPhotos.callInstagram(hashtag, story)
+    # Used to make sure a created story is given to current_user
+    @story = current_user.stories.new(story_params)
 
     respond_to do |format|
       if @story.save

@@ -14,7 +14,7 @@ define([
       },
       render: function() {
         var template = _.template(ApplicationTemplate);
-        this.$el.prepend(template());
+        this.$el.prepend(template({ user: this.user }));
 
         // render User Menu
         var userMenuView = new UserMenuView(this.user);

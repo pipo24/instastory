@@ -31,7 +31,7 @@ class User < ActiveRecord::Base
       token = Devise.friendly_token
       break token unless User.where(authentication_token: token).first
     end
-  end 
+  end
 
   def ensure_authentication_token
     if authentication_token.blank?
@@ -58,14 +58,14 @@ class User < ActiveRecord::Base
   end
 
   private
-    def self.create_user(auth)
-      email_is_verified = auth.info.email && (auth.info.verified || auth.info.verified_email)
-      email = auth.info.email if email_is_verified
+  def self.create_user(auth)
+    email_is_verified = auth.info.email && (auth.info.verified || auth.info.verified_email)
+    email = auth.info.email if email_is_verified
 
-      user = User.find_by_email(email) if email
+    user = User.find_by_email(email) if email
 
-      if user.nil? 
-        user = User.new 
+    if user.nil? 
+      user = User.new 
 
         # Generic for each provider
         FIELDS.try(:[], auth.try(:[], :provider).to_sym).each do |key, array|
@@ -82,8 +82,11 @@ class User < ActiveRecord::Base
       user.password = Devise.friendly_token[0,20] if user.password.blank?
 
       # Set user
-      user.authentication_token = ensure_authentication_token
+      if user.authentication_token?
+        user.ensure_authentication_token
+      end
+
       user.save!
       user
     end
-end
+  end

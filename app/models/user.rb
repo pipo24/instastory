@@ -11,7 +11,7 @@ class User < ActiveRecord::Base
   has_many :images, through: :stories
 
   # VALIDATIONS
-  validates :fullname, presence: true, length: { maximum: 25 }
+  validates :fullname, length: { maximum: 25 }
   validates :age, length: { maximum: 2 }, numericality: true
   validates :gender, inclusion: { in: %w(male female NA),
     message: "%{value} is not a valid gender" }

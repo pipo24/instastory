@@ -21,8 +21,9 @@ class User < ActiveRecord::Base
 
   FIELDS = {
     instagram: {
-      fullname:  [:info, :name],
-      profile_picture: [:info, :image]
+      fullname:        [:info, :name],
+      profile_picture: [:info, :image],
+      bio:             [:info, :bio]
     } 
   }
 

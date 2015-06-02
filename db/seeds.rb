@@ -11,4 +11,4 @@ binding.pry
 instagram_user = client.user_search(username, count: 1)
 
 insta_user_picture  = instagram_user[0].profile_picture
-insta_user_fullname = fullname
+insta_user_fullname = instagram_user[0].full_name

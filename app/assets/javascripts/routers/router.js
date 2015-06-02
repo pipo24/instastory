@@ -27,20 +27,22 @@ define([
 
     var getCurrentUser = function(callback){
 
-      if (window.oauth) {
-        $.cookie("authentication_token", window.oauth);
+      if (window.authenticationToken) {
+        $.cookie("authentication_token", window.authenticationToken);
       }
 
       var token = $.cookie("authentication_token");
+      console.log(token)
 
       if (token != null) {
         $.getJSON("/user/"+token, function(data){
           var session = new UserSession(data.user);
-          if (window.oauth) {
+          if (window.authenticationToken) {
             session.trigger("successfulSignIn");
             callback(session);
           } else {
             callback(session);
+            var session = new UserSession();
           }
         });
 

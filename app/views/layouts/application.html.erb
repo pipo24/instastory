@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+  <!DOCTYPE html>
 <html>
 <head>
   <title>StoreIt</title>
@@ -6,7 +6,7 @@
   <%= javascript_include_tag "lib/require", "data-main" => asset_url("application.js") %>
   <%= csrf_meta_tags %>
   <script>
-    window.oauth = "<#%= current_user.try(authentication_token) %>"
+    window.authenticationToken = "<%= raw current_user.authentication_token %>"
   </script>
 </head>
 <body>

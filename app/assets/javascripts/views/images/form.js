@@ -40,7 +40,8 @@ define([
         })
         this.image.save(imageData, {
           success: function(data){
-            Backbone.history.navigate('images/'+ data.id, true);
+            story_id = data.attributes.story.id
+            Backbone.history.navigate('stories/'+ story_id, true);
           }
         });
       }

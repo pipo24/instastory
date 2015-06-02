@@ -57,11 +57,11 @@ define([
       var router = new mainRouter;
 
       router.on('route:home', function(){
-        new HomeView().render()
+        new HomeView().render();
       });
 
       router.on('route:about', function(){
-        new AboutView().render()
+        new AboutView().render();
       });
 
       router.on('route:signUp', function(){

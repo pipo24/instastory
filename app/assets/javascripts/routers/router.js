@@ -32,7 +32,6 @@ define([
       }
 
       var token = $.cookie("authentication_token");
-      console.log(token)
 
       if (token != null) {
         $.getJSON("/user/"+token, function(data){

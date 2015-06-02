@@ -4,13 +4,12 @@ class ApplicationController < ActionController::Base
   # protect_from_forgery with: :exception
   # before_action :redirect_if_not_xhr
 
-  # helper_method :current_user
-
-  # def current_user
-  #    # Every request needs to be executed from the client side with an authentication token
-  #    return nil unless params[:authentication_token]
-  #    @user ||= User.find_by authentication_token: params[:authentication_token]
-  #  end
+  def current_user
+    authentication_token = params[:authentication_token] || cookies[:authentication_token]
+     # Every request needs to be executed from the client side with an authentication token
+     return nil unless authentication_token
+     @user ||= User.find_by authentication_token: authentication_token
+   end
 
   #  private
   #  def redirect_if_not_xhr 

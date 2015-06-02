@@ -12,6 +12,8 @@ define([
         fullname: '',
         age: null,
         gender: '',
+        nickname: '',
+        bio: '',
         profile_picture: '',
         stories: [],
         authentication_token: null,

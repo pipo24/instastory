@@ -11,12 +11,22 @@
 
 <p>
    <b>Name:</b>
-   <a href="/#users/<%= user.get("id") %>"><%= user.get("fullname") %></a>
+   <%= user.get("fullname") %>
 </p>
 
 <p>
    <b>Email:</b>
    <%= user.get("email") %>
+</p>
+
+<p>
+   <b>Nickname:</b>
+   <%= user.get("nickname") %>
+</p>
+
+<p>
+   <b>Bio:</b>
+   <%= user.get("bio") %>
 </p>
 
 <p>

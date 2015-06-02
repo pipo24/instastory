@@ -12,7 +12,9 @@ define([
       password_confirmation: '',
       fullname: '',    
       age: null,     
-      gender: '',     
+      gender: '',    
+      nickname: '',
+      bio: '', 
       profile_picture: '',
       stories: [],
     }

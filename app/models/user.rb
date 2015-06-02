@@ -23,6 +23,7 @@ class User < ActiveRecord::Base
     instagram: {
       fullname:        [:info, :name],
       profile_picture: [:info, :image],
+      nickname:        [:info, :nickname],
       bio:             [:info, :bio]
     } 
   }
@@ -66,8 +67,7 @@ class User < ActiveRecord::Base
     user = User.find_by_email(email) if email
 
     if user.nil? 
-      user = User.new 
-      binding.pry
+      user = User.new
         # Generic for each provider
         FIELDS.try(:[], auth.try(:[], :provider).to_sym).each do |key, array|
           a = auth

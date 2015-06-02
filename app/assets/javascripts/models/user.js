@@ -12,6 +12,9 @@ define([
       age: null,
       gender: '',
       profile_picture: '',
+      nickname: '',
+      bio: '',
+      profile_picture: '',
       stories: [],
     }
   });

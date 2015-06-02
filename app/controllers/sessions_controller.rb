@@ -12,6 +12,8 @@ class SessionsController < Devise::SessionsController
         fullname: user.fullname,
         age: user.age,
         gender: user.gender,
+        nickname: user.nickname,
+        bio: user.bio,
         profile_picture: user.profile_picture,
         authentication_token: user.authentication_token
         }, status: 201

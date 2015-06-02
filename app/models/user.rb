@@ -66,7 +66,7 @@ class User < ActiveRecord::Base
 
     if user.nil? 
       user = User.new 
-
+      binding.pry
         # Generic for each provider
         FIELDS.try(:[], auth.try(:[], :provider).to_sym).each do |key, array|
           a = auth

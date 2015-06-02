@@ -1,7 +1,7 @@
 <div class="users-index">
   <div class="cards">
+    <% _.each(users, function(user){ %>
     <div class="card">
-      <% _.each(users, function(user){ %>
       <div class="card-image">
        <img src="<%= user.get("profile_picture") %>" alt="Profile Picture">
      </div>
@@ -9,14 +9,10 @@
        <a href="/#users/<%= user.get("id") %>"><%= user.get("fullname") %>
        </div>
        <div class="card-copy">
-         <p>
-           <%= user.get("email") %> <br>
-           <%= user.get("gender") %> <br>
-           <%= user.get("age") %> <br>
-         </p>
+         <p><%= user.get("email") %></p>
        </div>
-       <% }); %>
      </div>
+     <% }); %>
    </div>
 
  </div>

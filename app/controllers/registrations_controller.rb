@@ -1,5 +1,12 @@
 class RegistrationsController < Devise::RegistrationsController
 
+  after_create :update_user
+
+  def update_user(self, email, fullname, password, password_confirmation)
+    # Custom Class UserDataInstagram
+    UserDataInstagram.search(self, email, fullname, password, password_confirmation)
+  end
+
     # POST /resource
   def create
     build_resource(sign_up_params)

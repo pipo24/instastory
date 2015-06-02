@@ -27,12 +27,23 @@ define([
 
     var getCurrentUser = function(callback){
 
+      if (window.oauth) {
+        $.cookie("authentication_token", window.oauth);
+      }
+
       var token = $.cookie("authentication_token");
+
       if (token != null) {
         $.getJSON("/user/"+token, function(data){
           var session = new UserSession(data);
-          callback(session)
+          if (window.oauth) {
+            session.trigger("successfulSignIn");
+            callback(session);
+          } else {
+            callback(session);
+          }
         });
+
       } else {
         var session = new UserSession();
         callback(session)

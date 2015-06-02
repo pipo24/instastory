@@ -5,8 +5,12 @@
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag "lib/require", "data-main" => asset_url("application.js") %>
   <%= csrf_meta_tags %>
+  <script>
+    window.oauth = "<%= current_user.authentication_token %>"
+  </script>
 </head>
 <body>
+
 <main></main>
 </body>
 </html>

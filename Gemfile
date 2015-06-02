@@ -4,8 +4,11 @@ ruby "2.2.1"
 
 # DEVISE
 gem 'devise', '3.4.1'
+gem 'omniauth', '1.2.2'
+gem 'omniauth-instagram'
 gem 'carrierwave', '0.10.0'
 gem 'instagram'
+gem 'httparty'
 
 # SERIALIZERS GEM
 gem 'active_model_serializers', '0.9.3'

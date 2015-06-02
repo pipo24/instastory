@@ -6,9 +6,9 @@ story = user.stories.create!(title: "Test", description: "testing description", 
 client = Instagram.client(client_id: ENV['INSTAGRAM_FINAL_PROJECT_API_KEY'])
 
 
-binding.pry
+# binding.pry
 
-instagram_user = client.user_search(username, count: 1)
+# instagram_user = client.user_search(username, count: 1)
 
-insta_user_picture  = instagram_user[0].profile_picture
-insta_user_fullname = instagram_user[0].full_name
+# insta_user_picture  = instagram_user[0].profile_picture
+# insta_user_fullname = instagram_user[0].full_name

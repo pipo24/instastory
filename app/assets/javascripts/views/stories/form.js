@@ -38,6 +38,7 @@ define([
         _($fields).each(function(field){
           storyData[$(field).attr("name")] = $(field).val()
         })
+        _(storyData).extend({authentication_token: $.cookie("authentication_token")}) 
         this.story.save(storyData, {
           success: function(data){
             Backbone.history.navigate('stories/'+ data.id, true);

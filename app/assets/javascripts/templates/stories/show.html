@@ -17,7 +17,8 @@
 
 <p>
    <b>Images:</b>
-   <% _.each(story.get("images"), function(image){ %>
+   <% images = _.sortBy(story.get("images"), function(image){ image.uploaded_at }) %>
+   <% _.each(images, function(image){ %>
    <ul>
       <li>
          <p><%= image.title %></p>
@@ -28,10 +29,10 @@
          </a>
       </li>
       <li>
-      <a class="edit" href="/#images/<%= image.id %>/edit">Edit Image</a>
+         <a class="edit" href="/#images/<%= image.id %>/edit">Edit</a>
       </li>
       <li>
-      <a class="delete-image" data-image-id="<%= image.id %>" href="/#images/<%= image.id %>/delete">Delete Image</a>
+         <a class="delete-image" data-image-id="<%= image.id %>" href="/#images/<%= image.id %>/delete">X</a>
       </li>
    </ul>
    <% }); %>

@@ -7,16 +7,20 @@
     <nav role="navigation">
       <ul id="js-centered-navigation-menu" class="centered-navigation-menu show">
         <li class="nav-link"><a href="/#about">About Us</a></li>
+        <% if(user.isLoggedIn()){ %>
         <li class="nav-link"><a href="/#users">Users</a></li>
+        <% } %>
         <li class="nav-link logo">
           <a href="/#" class="logo">
             <img src="http://icons.iconarchive.com/icons/icons8/ios7/512/Business-Collect-icon.png" alt="Logo image">
           </a>
         </li>
         <li class="nav-link more"><a href="/#stories">Stories</a>
+          <% if(user.isLoggedIn()){ %>
           <ul class="submenu">
             <li><a href="/#stories/new">New Story</a></li>
           </ul>
+          <% } %>
         </li>
         <li class="nav-link more"><a href="#">Account</a>
           <ul class="submenu" id="user-menu">

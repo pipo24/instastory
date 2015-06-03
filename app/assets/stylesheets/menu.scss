@@ -11,12 +11,12 @@ body {
   $base-border-radius: 3px !default;
   $dark-gray: #333 !default;
   $large-screen: em(860) !default;
-  $base-font-color: $dark-gray !default;
+  $base-font-color: white;
   $centered-navigation-padding: 1em;
   $centered-navigation-logo-height: 2em;
-  $centered-navigation-background: transparentize(rgb(0,150,255), 0.9);
+  $centered-navigation-background: white;
   $centered-navigation-color: $base-font-color;
-  $centered-navigation-color-hover: transparentize(rgb(0,100,255), 0.1);
+  $centered-navigation-color-hover: black;
   $centered-navigation-height: 60px;
   $centered-navigation-item-padding: 1em;
   $centered-navigation-submenu-padding: 1em;
@@ -24,7 +24,7 @@ body {
   $centered-navigation-item-nudge: 2.2em;
   $horizontal-bar-mode: $large-screen;
 
-  background-color: $centered-navigation-background;
+  @include background(linear-gradient(#517fa4, #306088) left top repeat);
   border-bottom: 1px solid darken($centered-navigation-background, 6%);
   min-height: $centered-navigation-height;
   width: 100%;
@@ -116,7 +116,7 @@ body {
   }
 
   ul li.nav-link {
-    background: $centered-navigation-background;
+    @include background(linear-gradient(#517fa4, #306088) left top repeat);
     display: block;
     line-height: $centered-navigation-height;
     overflow: hidden;
@@ -155,10 +155,11 @@ body {
     @include media($large-screen) {
       display: inline;
     }
-  }
-  .logo {
-    font-family: 'Kaushan Script', cursive;
-    font-size: 30px;
+    .logo {
+      font-family: 'Kaushan Script', cursive;
+      font-size: 30px;
+      color: #F3F3F3;
+    }
   }
 
   // Sub menus
@@ -261,14 +262,14 @@ body {
       }
 
       a {
-        background-color: darken($centered-navigation-background, 3%);
+        @include background(linear-gradient(#517fa4, #306088) left top repeat);
         display: inline-block;
         text-align: right;
         text-decoration: none;
         width: 100%;
 
         @include media($horizontal-bar-mode) {
-          background-color: $centered-navigation-background;
+          @include background(linear-gradient(lighten(#517fa4, 15%), lighten(#306088, 15%)) left top repeat);
           padding-left: $centered-navigation-submenu-padding;
           text-align: left;
           width: $centered-navigation-submenu-width;

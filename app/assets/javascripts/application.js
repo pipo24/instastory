@@ -4,7 +4,8 @@ require.config({
     underscore: 'lib/underscore',
     backbone: 'lib/backbone',
     text: 'lib/text',
-    cookie: 'lib/jquery.cookie'
+    cookie: 'lib/jquery.cookie',
+    bourbon: 'lib/modules/bourbon'
   }
 });
 

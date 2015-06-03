@@ -1,7 +1,7 @@
 <div id="users-show">
    <div id="user-info">
       <h1>
-         <%= user.get("fullname") %>
+         <%= user.get("fullname") %> <a href="http://instagram.com/<%= user.get("nickname") %>" target="_blank">@<%= user.get("nickname") %></a>
       </h1>
       <div id="user-photo">
          <p>
@@ -10,21 +10,9 @@
 
          <a class="delete" href="/#users/<%= user.get("id") %>/delete">Delete</a>
          <!-- <a class="edit" href="/#users/<%= user.get("id") %>/edit">Edit</a> -->
-         <a href="/#users">Back</a>
       </div>
 
       <p>
-         <b>Email:</b>
-         <%= user.get("email") %>
-      </p>
-
-      <p>
-         <b>Nickname:</b>
-         <%= user.get("nickname") %>
-      </p>
-
-      <p>
-         <b>Bio:</b>
          <%= user.get("bio") %>
       </p>
 
@@ -32,16 +20,10 @@
          <b>Age:</b>
          <%= user.get("age") %>
       </p>
-
-      <p>
-         <b>Gender:</b>
-         <%= user.get("gender") %>
-      </p>
+      <hr>
    </div>
    <div id="user-stories">
-
       <p>
-         <h2>This users stories:</h2>
          <% _.each(user.get("stories"), function(story){ %>
             <div class="user-stories-each tooltip-item">
                <a class="tooltip" href="/#stories/<%= story.id %>"><%= story.title %></a>

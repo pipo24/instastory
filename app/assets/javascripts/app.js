@@ -6,7 +6,8 @@ define([
   'routers/storiesRouter',
   'routers/imagesRouter',
   'routers/usersRouter',
-  ], function($, _, Backbone, Router, StoriesRouter, ImagesRouter, UsersRouter){
+  'bourbon'
+  ], function($, _, Backbone, Router, StoriesRouter, ImagesRouter, UsersRouter, bourbon){
 
     var initialize = function(){
       Router.initialize();

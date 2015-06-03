@@ -1,20 +1,3 @@
-<script type="text/javascript">
-  // MENU JS
-  $(document).ready(function() {
-    var menuToggle = $('#js-centered-navigation-mobile-menu').unbind();
-    $('#js-centered-navigation-menu').removeClass("show");
-    
-    menuToggle.on('click', function(e) {
-      e.preventDefault();
-      $('#js-centered-navigation-menu').slideToggle(function(){
-        if($('#js-centered-navigation-menu').is(':hidden')) {
-          $('#js-centered-navigation-menu').removeAttr('style');
-        }
-      });
-    });
-  });
-</script>
-
 <header class="centered-navigation" role="banner">
   <div class="centered-navigation-wrapper">
     <a href="/#" class="mobile-logo">
@@ -23,7 +6,7 @@
     <a href="javascript:void(0)" id="js-centered-navigation-mobile-menu" class="centered-navigation-mobile-menu">MENU</a>
     <nav role="navigation">
       <ul id="js-centered-navigation-menu" class="centered-navigation-menu show">
-        <li class="nav-link"><a href="/#about">About Us</a></li>
+        <li class="nav-link"><a href="/#about">About</a></li>
         <% if(user.isLoggedIn()){ %>
         <li class="nav-link"><a href="/#users">Users</a></li>
         <% } %>

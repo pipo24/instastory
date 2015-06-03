@@ -1,3 +1,11 @@
+main {
+  @include outer-container;
+}
+
+
+
+
+
 .centered-navigation {
   $base-border-radius: 3px !default;
   $dark-gray: #333 !default;
@@ -21,8 +29,16 @@
   width: 100%;
   z-index: 9999;
 
-  // Mobile view
+  ul li.nav-link {
+    padding: 0 !important;
 
+    a {
+      padding-right: 20px !important;
+    }
+  }
+
+  // Mobile view
+  
   .mobile-logo {
     display: inline;
     float: left;

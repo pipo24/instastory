@@ -15,7 +15,8 @@
             InstaStory
           </a>
         </li>
-        <li class="nav-link more"><a href="/#stories">Stories</a>
+        <li class="nav-link more">
+          <a href="/#stories">Stories</a>
           <% if(user.isLoggedIn()){ %>
           <ul class="submenu">
             <li><a href="/#stories/new">New Story</a></li>
@@ -29,7 +30,7 @@
               <img src="<%= user.get("profile_picture") %>">
               <%= user.get('nickname') %>
             </div>
-            <% } else{ %>
+            <% }else{ %>
             Register/Login
             <% } %>
           </a>

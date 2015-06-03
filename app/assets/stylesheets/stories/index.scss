@@ -26,7 +26,7 @@
   @include flex-grow(1);
   @include transition (all 0.2s ease-in-out);
   background-color: $card-background;
-  border-radius: $base-border-radius;
+  border-radius: $base-border-radius * 2;
   border: $card-border;
   box-shadow: 0 2px 4px darken($base-background-color, 10%);
   cursor: pointer;

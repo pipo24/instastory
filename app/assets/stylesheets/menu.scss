@@ -194,6 +194,11 @@ body {
     overflow: visible;
     padding-right: 0;
 
+    img {
+      position: relative;
+      max-height: 25px;
+    }
+
     a {
       padding-right: $centered-navigation-submenu-padding;
     }

@@ -22,7 +22,17 @@
           </ul>
           <% } %>
         </li>
-        <li class="nav-link more"><a href="#">Account</a>
+        <li class="nav-link more">
+          <a href="#">
+            <% if(user.isLoggedIn()){ %>
+            <div>
+              <img src="<%= user.get("profile_picture") %>">
+              <%= user.get('nickname') %>
+            </div>
+            <% } else{ %>
+            Register/Login
+            <% } %>
+          </a>
           <ul class="submenu" id="user-menu">
           </ul>
         </li>

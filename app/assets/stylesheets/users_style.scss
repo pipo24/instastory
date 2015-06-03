@@ -1,0 +1,38 @@
+#users-show {
+  text-align: center;
+  #user-info {
+    max-width: 500px;
+    margin: 0 auto;
+    background-color: rgba(0,0,0,0.2);
+    #user-photo {
+      max-width: 170px;
+      padding: 10px;
+      margin: 0 auto;
+      border: 1px solid white;
+      border-radius: 10px;
+      background-color: white;
+      img {
+        border: 2px solid rgba(0,0,0,0.2);
+        border-radius: 8px;
+      }
+      a {
+        padding: 5px;
+        border: 1px solid rgba(0,0,0,0.1);
+        border-radius: 5px;
+        background-color: rgba(0,0,0,0.1);
+        &:hover {
+          background-color: rgba(0,0,0,0.5);
+          color: white;
+        }
+        &.delete {
+          background-color: #c00;
+          color: white;
+          &:hover {
+            background-color: #DD1F00;
+            color: black;
+          }
+        }
+      }
+    }
+  }
+}

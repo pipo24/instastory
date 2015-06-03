@@ -2,7 +2,7 @@
    <img src="<%= story.get("user").profile_picture %>">
 
    <h2><%= story.get("user").fullname %></h2>
-   <h2><%= story.get("user").nickname %></h2>
+   <a href="http://instagram.com/piposmm " target="_blank"><h2>@<%= story.get("user").nickname %></h2></a>
 
 </div>
 <div class="story-description">
@@ -12,8 +12,7 @@
       <p><%= story.get("description") %></p>
    </div>
 
-   <h2>This Stories' Instagram Hashtag:</h2>
-   <h3><%= story.get("hashtag") %></h3>
+   <p>Instagram: #<%= story.get("hashtag") %></p>
 
    <a class="delete" href="/#stories/<%= story.get("id") %>/delete">Delete</a>
    <a class="edit" href="/#stories/<%= story.get("id") %>/edit">Edit</a>

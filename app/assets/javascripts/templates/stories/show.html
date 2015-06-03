@@ -1,43 +1,36 @@
-<h1><%= story.get("title") %></h1>
+<div class="story-user-profile">
+   <img src="<%= story.get("user").profile_picture %>">
 
-<p>
-   <b>Description:</b>
-   <%= story.get("description") %>
-</p>
+   <h2><%= story.get("user").fullname %></h2>
+   <h2><%= story.get("user").nickname %></h2>
 
-<p>
-   <b>Owner:</b>
-   <%= story.get("user").fullname %>
-</p>
+</div>
+<div class="story-description">
+   <h1><%= story.get("title") %></h1>
 
-<p>
-   <b>This Stories' Instagram Hashtag:</b>
-   <%= story.get("hashtag") %>
-</p>
+   <div>
+      <p><%= story.get("description") %></p>
+   </div>
 
-<p>
-   <b>Images:</b>
-   <% images = _.sortBy(story.get("images"), function(image){ image.uploaded_at }) %>
+   <h2>This Stories' Instagram Hashtag:</h2>
+   <h3><%= story.get("hashtag") %></h3>
+
+   <a class="delete" href="/#stories/<%= story.get("id") %>/delete">Delete</a>
+   <a class="edit" href="/#stories/<%= story.get("id") %>/edit">Edit</a>
+</div>
+
+<% images = _.sortBy(story.get("images"), function(image){ image.uploaded_at }) %>
+<div class="story-images">
    <% _.each(images, function(image){ %>
-   <ul>
-      <li>
+   <div class="grid-items">
+      <a href="/#images/<%= image.id %>" class="grid-item">
+         <img src="<%= image.picture %>">
          <p><%= image.title %></p>
-      </li>
-      <li>
-         <a href="/#images/<%= image.id %>">
-            <img src="<%= image.picture %>">
-         </a>
-      </li>
-      <li>
-         <a class="edit" href="/#images/<%= image.id %>/edit">Edit</a>
-      </li>
-      <li>
-         <a class="delete-image" data-image-id="<%= image.id %>" href="/#images/<%= image.id %>/delete">X</a>
-      </li>
-   </ul>
-   <% }); %>
-</p>
+      </a>
+      <% }); %>
+   </div>
+</div>
 
-<a class="delete" href="/#stories/<%= story.get("id") %>/delete">Delete</a>
-<a class="edit" href="/#stories/<%= story.get("id") %>/edit">Edit</a>
-<a href="/#stories">Back</a>
+
+<!-- <a class="edit" href="/#images/<#%= image.id %>/edit">Edit</a>
+<a class="delete-image" data-image-id="<#%= image.id %>" href="/#images/<#%= image.id %>/delete">X</a> -->

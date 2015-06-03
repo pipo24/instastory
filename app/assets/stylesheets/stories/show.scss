@@ -1,0 +1,90 @@
+.story-user-profile {
+  @include span-columns(4);
+}
+
+.story-description {
+  @include span-columns(8);
+  @include omega();
+}
+
+.story-images {
+  @include span-columns(12);
+  @mixin grid-item-columns($columns) {
+    width: (100% / 12) * $columns;
+  }
+
+  .grid-items {
+    $action-color: #477DCA !default;
+    $base-background-color: white !default;
+    $medium-screen: em(640) !default;
+    $large-screen: em(860) !default;
+    $grid-items-background: $base-background-color;
+    $grid-item-background: desaturate($action-color, 30%);
+    $grid-item-colors: 
+    desaturate($action-color, 30%), 
+    #3581A5, 
+    #5FBEBE,
+    #98C79A,
+    #A7A891, 
+    #BDCC97,
+    #979EA0;
+    $grid-item-border-size: 9px;
+    $grid-item-columns: 4;
+    $grid-item-big-columns: 8;
+    $grid-item-color: white;
+    $grid-item-height: 300px;
+
+    @include clearfix;
+    .grid-item {
+      @include transition (all 0.2s ease-in-out);
+      background: $grid-item-background;
+      border-top: 0;
+      cursor: pointer;
+      float: left;
+      height: $grid-item-height;
+      overflow: hidden;
+      outline: none;
+      padding-top: 20px;
+      text-align: center;
+      text-decoration: none;
+      width: 100%;
+      @include media($large-screen) {
+        @include grid-item-columns($grid-item-columns);
+      }
+      @for $i from 1 through length($grid-item-colors) { // assign colors from $grid-item-colors list
+        &:nth-child(#{$i}) {
+          $background-from-list: nth($grid-item-colors, $i);
+          background-color: white;
+          box-shadow: inset 0px 0px 1px 2px darken($background-from-list, 10%);
+          &:focus,
+          &:hover {
+            background-color: red;
+            background-repeat: no-repeat;
+            background-position: top;
+            background-size: cover;
+          }
+        }
+      }
+    }
+    .grid-item img {
+      display: block;
+      height: 200px;
+      margin-bottom: 10px;
+      margin: auto;
+    }
+    .grid-item h1 {
+      color: $grid-item-color;
+      font-size: 1.3em;
+      margin-bottom: 0.4em;
+    }
+    .grid-item p {
+      margin: auto;
+      color: black;
+
+      @include media($medium-screen) {
+        max-width: 70%;
+      }
+    }
+  }
+}
+

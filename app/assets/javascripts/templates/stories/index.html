@@ -1,24 +1,7 @@
-<h1>User Stories</h1>
-
- <table id="stories-table">
-   <tr>
-     <th>Title</th>
-     <th>Description</th>
-     <th>Instagram Hashtag</th>
-   </tr>
-
-   <tbody>
-     <% _.each(stories, function(story){ %>
-       <tr>
-         <td><a href="/#stories/<%= story.get('id') %>"><%= story.get("title") %></a></td>
-         <td><%= story.get("description") %></td>
-         <td><%= story.get("hashtag") %></td>
-       </tr>
-     <% }); %>
-   </tbody>
-
- </table>
-
- <br/>
-
- <a href="/#stories/new">New Story</a>
+<div>
+       <% _.each(stories, function(story){ %>
+           <a href="/#stories/<%= story.get('id') %>"><%= story.get("title") %></a>
+           <%= story.get("description") %>
+           <%= story.get("hashtag") %>
+       <% }); %>
+</div>

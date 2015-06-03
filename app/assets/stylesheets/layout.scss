@@ -134,16 +134,14 @@
   li.logo.nav-link {
     display: none;
     line-height: 0;
-
+    margin-right: 0px;
     @include media($large-screen) {
       display: inline;
     }
   }
-
-  .logo img {
-    margin-bottom: -$centered-navigation-logo-height / 3;
-    max-height: $centered-navigation-logo-height;
-    opacity: 0.6;
+  .logo {
+    font-family: 'Kaushan Script', cursive;
+    font-size: 30px;
   }
 
   // Sub menus

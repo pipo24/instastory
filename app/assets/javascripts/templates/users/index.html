@@ -9,10 +9,8 @@
        <a href="/#users/<%= user.get("id") %>"><h2><%= user.get("fullname") %></h2>
        </div>
        <div class="card-copy">
-         <p><%= user.get("nickname") %></p>
          <p><%= user.get("bio") %></p>
-         <h3>Nº of Stories:</h3>
-         <h2><%= user.get("stories").length %></h2>
+         <h3>Nº of Stories: <%= user.get("stories").length %></h3>
        </div>
      </div>
      <% }); %>

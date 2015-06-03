@@ -1,7 +1,18 @@
-<div>
-       <% _.each(stories, function(story){ %>
-           <a href="/#stories/<%= story.get('id') %>"><%= story.get("title") %></a>
-           <%= story.get("description") %>
-           <%= story.get("hashtag") %>
-       <% }); %>
+<div class="cards">
+  <% _.each(stories, function(story){ %>
+  <a href="/#stories/<%= story.get('id') %>">
+    <div class="card">
+      <div class="card-image">
+        <img src="<%= story.get("images")[Math.floor(Math.random()*story.get("images").length)].picture%>" alt="">
+      </div>
+      <div class="card-header">
+        <h1><%= story.get("title") %></h1>
+      </div>
+      <div class="card-copy">
+        <h2><%= story.get("description") %></h2>
+        <h2><%= story.get("hashtag") %></h2>
+      </div>
+    </div>
+    <% }); %>
+  </a>
 </div>

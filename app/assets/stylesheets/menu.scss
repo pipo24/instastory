@@ -1,6 +1,7 @@
 body {
   margin: 0;
   font-family: 'Monserrat',Arial,Helvetica,sans-serif;
+  background-color: #EBECED;
   main {
     @include outer-container;
     margin: 0 auto;

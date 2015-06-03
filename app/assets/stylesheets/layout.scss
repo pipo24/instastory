@@ -1,11 +1,12 @@
-main {
-  @include outer-container;
+body {
+  margin: 0;
+  font-family: 'Monserrat',Arial,Helvetica,sans-serif;
+  main {
+    @include outer-container;
+    margin: 0 auto;
+    margin-top: 30px;
+  }
 }
-
-
-
-
-
 .centered-navigation {
   $base-border-radius: 3px !default;
   $dark-gray: #333 !default;

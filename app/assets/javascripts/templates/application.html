@@ -6,15 +6,7 @@
     <a href="javascript:void(0)" id="js-centered-navigation-mobile-menu" class="centered-navigation-mobile-menu">MENU</a>
     <nav role="navigation">
       <ul id="js-centered-navigation-menu" class="centered-navigation-menu show">
-        <li class="nav-link"><a href="/#about">About</a></li>
-        <% if(user.isLoggedIn()){ %>
         <li class="nav-link"><a href="/#users">Users</a></li>
-        <% } %>
-        <li class="nav-link logo">
-          <a href="/#" class="logo">
-            InstaStory
-          </a>
-        </li>
         <li class="nav-link more">
           <a href="/#stories">Stories</a>
           <% if(user.isLoggedIn()){ %>
@@ -22,6 +14,11 @@
             <li><a href="/#stories/new">New Story</a></li>
           </ul>
           <% } %>
+        </li>
+        <li class="nav-link logo">
+          <a href="/#" class="logo">
+            InstaStory
+          </a>
         </li>
         <li class="nav-link more">
           <a href="#">
@@ -42,17 +39,17 @@
   </div>
 </header>
 <script>
-$(function() {
-  var menuToggle = $('#js-centered-navigation-mobile-menu').unbind();
-  $('#js-centered-navigation-menu').removeClass("show");
-  
-  menuToggle.on('click', function(e) {
-    e.preventDefault();
-    $('#js-centered-navigation-menu').slideToggle(function(){
-      if($('#js-centered-navigation-menu').is(':hidden')) {
-        $('#js-centered-navigation-menu').removeAttr('style');
-      }
+  $(function() {
+    var menuToggle = $('#js-centered-navigation-mobile-menu').unbind();
+    $('#js-centered-navigation-menu').removeClass("show");
+    
+    menuToggle.on('click', function(e) {
+      e.preventDefault();
+      $('#js-centered-navigation-menu').slideToggle(function(){
+        if($('#js-centered-navigation-menu').is(':hidden')) {
+          $('#js-centered-navigation-menu').removeAttr('style');
+        }
+      });
     });
   });
-});
 </script>

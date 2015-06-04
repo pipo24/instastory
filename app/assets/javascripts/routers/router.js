@@ -5,18 +5,16 @@ define([
   'backbone',
   'views/application',
   'views/static_pages/home',
-  'views/static_pages/about',
   'views/users/sign_in',
   'views/users/sign_up',
   'models/user_session',
   'lib/modules/csrf'
-  ], function($, Cookie, _, Backbone, ApplicationView, HomeView, AboutView, SignInView, SignUpView, UserSession, csrf){
+  ], function($, Cookie, _, Backbone, ApplicationView, HomeView, SignInView, SignUpView, UserSession, csrf){
 
     // Issue is that this Router does not initialize on static pages
     var mainRouter = Backbone.Router.extend({
       routes: {
         ''         : 'home',
-        'about'    : 'about',
         'sign_in'  : 'signIn',
         'sign_up'  : 'signUp',
       }
@@ -60,10 +58,6 @@ define([
       router.on('route:home', function(){
         console.log("Home");
         new HomeView().render();
-      });
-
-      router.on('route:about', function(){
-        new AboutView().render();
       });
 
       router.on('route:signUp', function(){

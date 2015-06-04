@@ -142,7 +142,6 @@ body {
       background: transparent;
       display: inline;
       line-height: $centered-navigation-height;
-
       a {
         padding-right: $centered-navigation-item-padding;
       }
@@ -199,6 +198,9 @@ body {
     img {
       position: relative;
       max-height: 25px;
+      border-radius: 3px;
+      top: 8px;
+      box-shadow: 2px 2px 6px lighten(black, 10%);
     }
 
     a {

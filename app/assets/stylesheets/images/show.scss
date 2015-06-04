@@ -1,0 +1,44 @@
+.image {
+  text-align: center;
+  h1 {
+    font-size: 35px;
+  }
+  img {
+    margin-top: 20px;
+    margin-bottom: 30px;
+    border-radius: 10px;
+    box-shadow: 3px 6px 10px lighten(black, 20%);
+  }
+  .info {
+    max-width: 720px;
+    margin: 0 auto;
+    margin-top: 10px;
+    margin-bottom: 30px;
+    padding: 20px;
+    text-align: left;
+    border: 2px solid #D9CDBC;
+    border-radius: 5px;
+    b {
+      font-size: 20px;
+      margin-bottom: 10px;
+    }
+  }
+  a {
+    padding: 5px;
+    border: 1px solid rgba(0,0,0,0.1);
+    border-radius: 5px;
+    background-color: rgba(0,0,0,0.1);
+    &:hover {
+      background-color: rgba(0,0,0,0.5);
+      color: white;
+    }
+    &.delete {
+      background-color: #c00;
+      color: white;
+      &:hover {
+        background-color: #DD1F00;
+        color: black;
+      }
+    }
+  }
+}

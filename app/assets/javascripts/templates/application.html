@@ -28,7 +28,7 @@
             <% if(user.isLoggedIn()){ %>
             <div>
               <img src="<%= user.get("profile_picture") %>">
-              <%= user.get('nickname') %>
+              @<%= user.get('nickname') %>
             </div>
             <% }else{ %>
             Register/Login

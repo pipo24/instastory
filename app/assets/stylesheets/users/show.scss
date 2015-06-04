@@ -33,14 +33,6 @@
           background-color: rgba(0,0,0,0.5);
           color: white;
         }
-        &.delete {
-          background-color: #c00;
-          color: white;
-          &:hover {
-            background-color: #DD1F00;
-            color: black;
-          }
-        }
       }
     }
   }
@@ -53,11 +45,27 @@
       border-radius: 7px;
       a {
         font-size: 20px;
+        font-weight: 700;
+        &:hover {
+          color: green;
+        }
       }
       img {
         max-width: 103px;
         border: 1px solid white;
         border-radius: 2px;
+      }
+      .delete {
+        font-size: 15px;
+        padding: 3px;
+        border: 1px solid rgba(0,0,0,0.1);
+        border-radius: 5px;
+        background-color: rgba(0,0,0,0.1);
+        color: red;
+        &:hover {
+          background-color: rgba(0,0,0,0.3);
+          color: white;
+        }
       }
     }
   }

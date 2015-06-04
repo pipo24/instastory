@@ -8,7 +8,7 @@
             <img src="<%= user.get("profile_picture") %>">
          </p>
 
-         <a class="delete" href="/#users/<%= user.get("id") %>/delete">Delete</a>
+         <!-- <a class="delete" href="/#users/<%= user.get("id") %>/delete">Delete</a> -->
          <!-- <a class="edit" href="/#users/<%= user.get("id") %>/edit">Edit</a> -->
       </div>
 
@@ -33,6 +33,7 @@
                      <img src="<%= story.images[Math.floor((Math.random() * 5) + 15)].picture %>">
                      <img src="<%= story.images[Math.floor((Math.random() * 5) + 21)].picture %>">
                      <img src="<%= story.images[Math.floor((Math.random() * 10) + 5)].picture %>">
+                     <a class="delete" href="/#stories/<%= story.id %>/delete">Delete</a>
                   </li>
                </ul>
             </div>

@@ -24,6 +24,8 @@ define([
           age: $("input[name='age']").val(),
           gender: $("select[name='gender']").val(),
           profile_picture: $("input[name='profile_picture']").val(),
+          nickname: $("input[name='nickname']").val(),
+          bio: $("input[name='bio']").val(),
           password: $("input[name='password']").val(),
           password_confirmation: $("input[name='password_confirmation']").val()
         }, {

@@ -14,7 +14,7 @@ body {
   $large-screen: em(860) !default;
   $base-font-color: white;
   $centered-navigation-padding: 1em;
-  $centered-navigation-logo-height: 2em;
+  $centered-navigation-logo-height: 1em;
   $centered-navigation-background: white;
   $centered-navigation-color: $base-font-color;
   $centered-navigation-color-hover: black;
@@ -157,6 +157,7 @@ body {
       display: inline;
     }
     .logo {
+      text-shadow: 0 2px 4px lighten(black, 15%);
       font-family: 'Kaushan Script', cursive;
       font-size: 30px;
       color: #F3F3F3;

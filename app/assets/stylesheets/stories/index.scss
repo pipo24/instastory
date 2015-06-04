@@ -28,7 +28,7 @@
   background-color: $card-background;
   border-radius: $base-border-radius * 2;
   border: $card-border;
-  box-shadow: 0 2px 4px darken($base-background-color, 10%);
+  box-shadow: 0 3px 6px darken($base-background-color, 40%);
   cursor: pointer;
   margin: 0 $card-margin $base-spacing $card-margin;
   position: relative;
@@ -69,6 +69,7 @@
   &:focus,
   &:hover {
     background-color: $card-hover-background;
+    box-shadow: 0 5px 10px darken($base-background-color, 25%);
     .card-image img {
       background: $card-image-hover-background;
     }

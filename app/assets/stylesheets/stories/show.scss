@@ -1,10 +1,77 @@
 .story-user-profile {
   @include span-columns(4);
+  margin-bottom: 15px;
+  h1 {
+    margin-top: 10px;
+    font-size: 30px;
+    font-family: 'Montserrat', sans-serif;
+    color: black;
+    &:hover {
+      color: #477DCA;
+    }
+  }
+  h2 {
+    font-size: 20px;
+    font-family: 'Montserrat', sans-serif;
+    &:hover {
+      color: white;
+    }
+  }
+  hr {
+    margin: 0;
+    max-width: 320px;
+    margin: 0 auto;
+  }
+  .user-photo {
+    max-width: 200px;
+    margin: 0 auto;
+    margin-bottom: 5px;
+    padding: 10px;
+    border-radius: 10px;
+    background-color: white;
+    img {
+      border-radius: 8px;
+    }
+  }
 }
 
 .story-description {
+  padding: 10px;
+  padding-bottom: 20px;
+  box-shadow: inset 0px 0px 1px 1px white;
   @include span-columns(8);
   @include omega();
+  h1 {
+    font-size: 40px;
+    font-family: 'Montserrat', sans-serif;
+    color: black;
+    text-shadow: 2px 1px 1px lighten(black, 50%);
+  }
+  p {
+    max-width: 100%;
+  }
+  h4 {
+    font-size: 12px;
+    color: #477DCA;
+  }
+  a {
+    padding: 5px;
+    border: 1px solid rgba(0,0,0,0.1);
+    border-radius: 5px;
+    background-color: rgba(0,0,0,0.1);
+    &:hover {
+      background-color: rgba(0,0,0,0.5);
+      color: white;
+    }
+    &.delete {
+      background-color: #c00;
+      color: white;
+      &:hover {
+        background-color: #DD1F00;
+        color: black;
+      }
+    }
+  }
 }
 
 .story-images {
@@ -16,28 +83,26 @@
   .grid-items {
     $action-color: #477DCA !default;
     $base-background-color: white !default;
-    $medium-screen: em(640) !default;
+    $medium-screen: em(680) !default;
     $large-screen: em(860) !default;
     $grid-items-background: $base-background-color;
     $grid-item-background: desaturate($action-color, 30%);
     $grid-item-colors: #EBECED;
     $grid-item-border-size: 9px;
     $grid-item-columns: 4;
-    $grid-item-big-columns: 8;
     $grid-item-color: white;
-    $grid-item-height: 300px;
+    $grid-item-height: 360px;
 
     @include clearfix;
     .grid-item {
+      position: relative;
       @include transition (all 0.2s ease-in-out);
       background: $grid-item-background;
       border-top: 0;
       cursor: pointer;
       float: left;
       height: $grid-item-height;
-      overflow: hidden;
       outline: none;
-      padding-top: 20px;
       text-align: center;
       text-decoration: none;
       width: 100%;
@@ -46,37 +111,48 @@
       }
       @for $i from 1 through length($grid-item-colors) { // assign colors from $grid-item-colors list
         &:nth-child(#{$i}) {
-          $background-from-list: nth($grid-item-colors, $i);
-          background-color: white;
-          box-shadow: inset 0px 0px 1px 1px darken($background-from-list, 5%);
+          $background-from-list: $grid-item-colors;
+          background-color: $background-from-list;
+          box-shadow: inset 0px 0px 2px 2px $background-from-list;
           &:focus,
           &:hover {
-            background-color: #EBECED;
+            box-shadow: inset 0px 0px 1px 1px lighten(#517fa4, 40%);
             background-repeat: no-repeat;
             background-position: top;
             background-size: cover;
+            img{
+              opacity: 0.7
+            }
+            p {
+              opacity: 1;
+            }
           }
         }
       }
     }
     .grid-item img {
-      display: block;
-      height: 200px;
+      height: $grid-item-height;
       margin-bottom: 10px;
       margin: auto;
-    }
-    .grid-item h1 {
-      color: $grid-item-color;
-      font-size: 1.3em;
-      margin-bottom: 0.4em;
+      border-radius: 2px;
     }
     .grid-item p {
-      margin: auto;
+      position: absolute;
+      opacity: 0;
+      top: 50%;
+      width: 100%;
+      background-color: rgba(255,255,255,0.5);
+      max-height: $grid-item-height/2;
+      border-radius: 2px;
+      padding: 4px;
       color: black;
-
-      @include media($medium-screen) {
-        max-width: 70%;
-      }
+      font-size: 1em;
+    }
+    .edit-image,
+    .delete-image {
+      position: absolute;
+      // opacity: 0;
+      color: red;
     }
   }
 }

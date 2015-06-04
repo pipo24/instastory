@@ -1,18 +1,16 @@
 <div class="story-user-profile">
-   <img src="<%= story.get("user").profile_picture %>">
-
-   <h2><%= story.get("user").fullname %></h2>
+   <img class="user-photo" src="<%= story.get("user").profile_picture %>">
+   <hr>
+   <a href="/#users/<%= story.get("user").id %>"><h1><%= story.get("user").fullname %></h1></a>
    <a href="http://instagram.com/piposmm " target="_blank"><h2>@<%= story.get("user").nickname %></h2></a>
-
+   <hr>
 </div>
 <div class="story-description">
    <h1><%= story.get("title") %></h1>
 
-   <div>
-      <p><%= story.get("description") %></p>
-   </div>
+   <p><%= story.get("description") %></p>
 
-   <p>Instagram: #<%= story.get("hashtag") %></p>
+   <h4>Instagram: #<%= story.get("hashtag") %></h4>
 
    <a class="delete" href="/#stories/<%= story.get("id") %>/delete">Delete</a>
    <a class="edit" href="/#stories/<%= story.get("id") %>/edit">Edit</a>
@@ -25,11 +23,13 @@
       <a href="/#images/<%= image.id %>" class="grid-item">
          <img src="<%= image.picture %>">
          <p><%= image.title %></p>
+         <a class="edit-image" href="/#images/<#%= image.id %>/edit">Edit</a>
+         <a class="delete-image" data-image-id="<#%= image.id %>" href="/#images/<#%= image.id %>/delete">X</a>
       </a>
       <% }); %>
    </div>
 </div>
 
 
-<!-- <a class="edit" href="/#images/<#%= image.id %>/edit">Edit</a>
-<a class="delete-image" data-image-id="<#%= image.id %>" href="/#images/<#%= image.id %>/delete">X</a> -->
+<a class="edit" href="/#images/<#%= image.id %>/edit">Edit</a>
+<a class="delete-image" data-image-id="<#%= image.id %>" href="/#images/<#%= image.id %>/delete">X</a>

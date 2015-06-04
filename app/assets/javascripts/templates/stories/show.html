@@ -23,13 +23,13 @@
       <a href="/#images/<%= image.id %>" class="grid-item">
          <img src="<%= image.picture %>">
          <p><%= image.title %></p>
-         <a class="edit-image" href="/#images/<#%= image.id %>/edit">Edit</a>
-         <a class="delete-image" data-image-id="<#%= image.id %>" href="/#images/<#%= image.id %>/delete">X</a>
+         <a class="edit-image" href="/#images/<%= image.id %>/edit">Edit</a>
+         <a class="delete-image" data-image-id="<%= image.id %>" href="/#images/<%= image.id %>/delete">X</a>
       </a>
       <% }); %>
    </div>
 </div>
 
 
-<a class="edit" href="/#images/<#%= image.id %>/edit">Edit</a>
-<a class="delete-image" data-image-id="<#%= image.id %>" href="/#images/<#%= image.id %>/delete">X</a>
+<!-- <a class="edit" href="/#images/<#%= image.id %>/edit">Edit</a>
+<a class="delete-image" data-image-id="<#%= image.id %>" href="/#images/<#%= image.id %>/delete">X</a> -->

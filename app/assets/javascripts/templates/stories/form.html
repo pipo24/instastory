@@ -1,23 +1,29 @@
-<div class="alert hide" role="alert">
-  <ul></ul>
-</div>
-<div class="field">
-  <label>Title:</label>
-  <input type="text" name="title" value="<%= story.get("title") %>">
-</div>
+<div class="edit">
+  <hr>
+  <h1>Create A New Story</h1>
+  <h2>Use this form to create/edit a new story with photos from <a target="_blank" href="http://www.instagram.com">Instagram</a> by selecting a <span>#<em>tag</em></span> you used to represent your recent trip or adventure.</h2>
+  <hr>
+  <div class="form">
+    <div class="alert hide" role="alert">
+      <ul></ul>
+    </div>
+    <div class="field">
+    <label>Title</label>
+      <input type="text" name="title" value="<%= story.get("title") %>">
+    </div>
 
-<div class="field">
-  <label>Description:</label>
-  <input type="text" name="description" value="<%= story.get("description") %>">
-</div>
+    <div class="field">
+    <label>Description</label>
+      <input class="description" type="text" name="description" value="<%= story.get("description") %>">
+    </div>
 
-<div class="field">
-  <label>Story Instagram hashtag:</label>
-  <input type="text" name="hashtag" value="<%= story.get("hashtag") %>">
-</div>
+    <div class="field">
+    <label>Story Instagram hashtag</label>
+      <input type="text" name="hashtag" value="<%= story.get("hashtag") %>">
+    </div>
 
-<div class="actions">
-  <button><%= action %></button>
+    <div class="actions">
+      <button><%= action %></button>
+    </div>
+  </div>
 </div>
-
-<a href="/#stories">Back</a>

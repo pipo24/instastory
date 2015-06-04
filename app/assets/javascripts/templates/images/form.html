@@ -1,41 +1,30 @@
-<h1>Image</h1>
- <div class="field">
-   <label>Title:</label>
-   <input type="text" name="title" value="<%= image.get("title") %>">
- </div>
+<div class="edit">
+  <hr>
+  <h1>Edit Image Info</h1>
+  <h2>Use this form to edit an image from the <a href="/#images/<%= image.get("story").id %>"><%= image.get("story").title %></a> story. You may change the images Title, Tags and Uploaded at date.</h2>
+  <hr>
+  <div class="form">
+    <div class="field">
+     <label>Title:</label>
+     <input type="text" name="title" value="<%= image.get("title") %>">
+   </div>
+   <div class="field">
+     <label>Instagram Tags:</label>
+     <input type="text" name="tags" value="<%= image.get("tags") %>">
+   </div>
 
- <div class="field">
-   <label>Instagram Tags:</label>
-   <input type="text" name="tags" value="<%= image.get("tags") %>">
- </div>
+   <div class="field">
+     <label>Instagram User:</label>
+     <input type="text" name="image_username" value="<%= image.get("story").user.nickname %>">
+   </div>
 
- <div class="field">
-   <label>Instagram User:</label>
-   <input type="text" name="image_username" value="<%= image.get("image_username") %>">
- </div>
+   <div class="field">
+     <label>Uploaded At:</label>
+     <input type="datetime" name="uploaded_at" value="<%= image.get("uploaded_at") %>">
+   </div>
 
- <div class="field">
-   <label>Location Name:</label>
-   <input type="text" name="location_name" value="<%= image.get("location_name") %>">
+   <div class="actions">
+     <button><%= action %></button>
+   </div>
  </div>
-
- <div class="field">
-   <label>Longitude:</label>
-   <input type="integer" name="longitude" value="<%= image.get("longitude") %>">
- </div>
-
- <div class="field">
-   <label>Latitude:</label>
-   <input type="integer" name="latitude" value="<%= image.get("latitude") %>">
- </div>
-
- <div class="field">
-   <label>Uploaded At:</label>
-   <input type="datetime" name="uploaded_at" value="<%= image.get("uploaded_at") %>">
- </div>
-
- <div class="actions">
-   <button><%= action %></button>
- </div>
-
- <a href="/#images">Back</a>
+</div>

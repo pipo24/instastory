@@ -2,7 +2,6 @@
 @import "neat";
 @import "base/base";
 @import "menu.scss";
-@import "homepage.scss";
 
 // Users
 @import "users/*";
@@ -12,3 +11,6 @@
 
 // Images
 @import "images/*";
+
+// Static Pages
+@import "static_pages/*";

@@ -30,7 +30,7 @@ cheryl = User.create!(
   gender: "female",
   nickname: "croissants",
   bio: "Hello, thanks...ummm... (sneeze) im sorry guys!",
-  profile_picture: "http://images.ak.instagram.com/profiles/profile_213821710_75sq_1370000037.jpg"
+  profile_picture: "https://igcdn-photos-a-a.akamaihd.net/hphotos-ak-xfp1/t51.2885-19/11008077_581553611979792_1089825693_a.jpg"
   )
 tyrone = User.create!(
   email: "tyrone@compton.com",

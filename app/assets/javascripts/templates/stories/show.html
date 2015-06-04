@@ -7,25 +7,30 @@
 </div>
 <div class="story-description">
    <h1><%= story.get("title") %></h1>
-
    <p><%= story.get("description") %></p>
-
    <h4>Instagram: #<%= story.get("hashtag") %></h4>
-
    <a class="delete" href="/#stories/<%= story.get("id") %>/delete">Delete</a>
    <a class="edit" href="/#stories/<%= story.get("id") %>/edit">Edit</a>
 </div>
 
 <% images = _.sortBy(story.get("images"), function(image){ image.uploaded_at }) %>
 <div class="story-images">
-   <% _.each(images, function(image){ %>
    <div class="grid-items">
-      <a href="/#images/<%= image.id %>" class="grid-item">
-         <img src="<%= image.picture %>">
-         <p><%= image.title %></p>
-         <a class="edit-image" href="/#images/<%= image.id %>/edit">Edit</a>
-         <a class="delete-image" data-image-id="<%= image.id %>" href="/#images/<%= image.id %>/delete">X</a>
-      </a>
+      <% _.each(images, function(image){ %>
+         <div class="grid-item">
+            <a href="/#images/<%= image.id %>">
+               <img src="<%= image.picture %>">
+            </a>
+            <p><%= image.title %></p>
+            <ul class="grid-item-buttons">
+               <li>
+                  <a class="edit-image" href="/#images/<%= image.id %>/edit">Edit</a>
+               </li>
+               <li>
+                  <a class="delete-image" data-image-id="<%= image.id %>" href="/#images/<%= image.id %>/delete">Delete</a>
+               </li>
+            </ul> 
+         </div>
       <% }); %>
    </div>
 </div>

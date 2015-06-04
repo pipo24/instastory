@@ -12,6 +12,7 @@ define([
   'lib/modules/csrf'
   ], function($, Cookie, _, Backbone, ApplicationView, HomeView, AboutView, SignInView, SignUpView, UserSession, csrf){
 
+    // Issue is that this Router does not initialize on static pages
     var mainRouter = Backbone.Router.extend({
       routes: {
         ''         : 'home',
@@ -26,7 +27,6 @@ define([
     }
 
     var getCurrentUser = function(callback){
-
       if (window.authenticationToken) {
         $.cookie("authentication_token", window.authenticationToken);
       }
@@ -54,9 +54,11 @@ define([
     var setRouter = function(session){
       csrf();
       layout(session);
-      var router = new mainRouter;
+
+      var router = new mainRouter();
 
       router.on('route:home', function(){
+        console.log("Home");
         new HomeView().render();
       });
 
@@ -70,10 +72,6 @@ define([
 
       router.on('route:signIn', function(){
         new SignInView(session).render();
-      });
-
-      router.on('route:defaultAction', function(actions) {
-        console.log('No route:', actions);
       });
     }
 

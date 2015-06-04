@@ -15,6 +15,7 @@ define([
       ImagesRouter.initialize();
       UsersRouter.initialize();
       Backbone.history.start();
+      bourbon();
     }
 
     return {

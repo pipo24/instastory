@@ -3,8 +3,9 @@ define([
   'underscore',
   'backbone',
   'models/user',
+  'models/story',
   'text!templates/users/show.html'
-  ], function($, _, Backbone, User, UserTemplate) {
+  ], function($, _, Backbone, User, Story, UserTemplate) {
 
     var UsersShowView = Backbone.View.extend({
       el: 'main',
@@ -27,7 +28,7 @@ define([
     },
 
     events: {
-      "click .delete": "delete"
+      "click .delete"       : "delete"
     },
 
     delete: function(ev){

@@ -10,6 +10,7 @@ define([
       render: function(data){
         var template = _.template(AboutTemplate);
         this.$el.html(template({}));
+        return this;
       }
     });
 

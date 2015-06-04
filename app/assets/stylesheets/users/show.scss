@@ -17,22 +17,11 @@
     #user-photo {
       max-width: 200px;
       margin: 0 auto;
-      margin-bottom: 5px;
       padding: 10px;
       border-radius: 10px;
       background-color: white;
       img {
         border-radius: 8px;
-      }
-      a {
-        padding: 5px;
-        border: 1px solid rgba(0,0,0,0.1);
-        border-radius: 5px;
-        background-color: rgba(0,0,0,0.1);
-        &:hover {
-          background-color: rgba(0,0,0,0.5);
-          color: white;
-        }
       }
     }
   }
@@ -55,7 +44,7 @@
         border: 1px solid white;
         border-radius: 2px;
       }
-      .delete {
+      .delete-story {
         font-size: 15px;
         padding: 3px;
         border: 1px solid rgba(0,0,0,0.1);

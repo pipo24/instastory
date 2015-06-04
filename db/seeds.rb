@@ -28,7 +28,7 @@ cheryl = User.create!(
   fullname: "Cheryl Wee",
   age: 25,
   gender: "female",
-  nickname: "piposmm",
+  nickname: "croissants",
   bio: "Hello, thanks...ummm... (sneeze) im sorry guys!",
   profile_picture: "http://images.ak.instagram.com/profiles/profile_213821710_75sq_1370000037.jpg"
   )

@@ -28,6 +28,8 @@ class InstagramSearch
     end
 
     next_images = client.tag_recent_media(hashtag, {max_id: images.pagination.next_max_id})
+
+    
     next_images.each do |image|
       if image.location?
         longitude     = image.location.longitude.to_i

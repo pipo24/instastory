@@ -1,7 +1,7 @@
 .cards {
   @include display(flex);
   @include flex-wrap(wrap);
-  @include justify-content(space-between center);
+  @include justify-content(space-around);
 }
 
 .card {
@@ -24,7 +24,8 @@
 
   @include flex-basis(15em);
   @include flex-grow(1);
-  @include transition (all 0.2s ease-in-out);
+  @include transition (all 0.3s ease-in-out);
+  max-width: 372px;
   background-color: $card-background;
   border-radius: $base-border-radius * 2;
   border: $card-border;
@@ -53,6 +54,9 @@
     border-radius: $base-border-radius;
     font-weight: bold;
     padding: 5px;
+    h1 {
+      margin-bottom: 0;
+    }
   }
 
   .card-copy {
@@ -69,7 +73,7 @@
   &:focus,
   &:hover {
     background-color: $card-hover-background;
-    box-shadow: 0 5px 10px darken($base-background-color, 25%);
+    box-shadow: 0 5px 10px darken($base-background-color, 35%);
     .card-image img {
       background: $card-image-hover-background;
     }

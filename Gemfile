@@ -1,6 +1,8 @@
 source 'https://rubygems.org'
 
 ruby "2.2.1"
+# Model design app
+gem 'railroady'
 
 # DEVISE
 gem 'devise', '3.4.1'

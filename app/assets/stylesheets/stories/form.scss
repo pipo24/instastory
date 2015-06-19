@@ -19,7 +19,6 @@
     text-align: center;
   }
   .form {
-    // background-color: ;
     max-width: 720px;
     margin: 0 auto;
     margin-top: 30px;
@@ -33,6 +32,13 @@
       &:hover {
         background-color: darken(#3d8b5f, 4%);
       }
+    }
+    .hashtag {
+      margin-bottom: 0; 
+    }
+    p {
+      font-size: 10px;
+      margin-top: 0;
     }
   }
 }

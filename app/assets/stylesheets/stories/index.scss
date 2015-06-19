@@ -38,7 +38,6 @@
 
   .card-image {
     overflow: hidden;
-
     img {
       @include transition (all 0.2s ease-in-out);
       background: $card-image-background;

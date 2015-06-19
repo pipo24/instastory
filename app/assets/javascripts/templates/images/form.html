@@ -15,13 +15,13 @@
    </div>
 
    <div class="field">
-     <label>Instagram User:</label>
-     <input type="text" name="image_username" value="<%= image.get("story").user.nickname %>">
+     <label>Instagram Image Owner:</label>
+     <input type="text" name="image_username" value="<%= image.get("image_username") %>">
    </div>
 
    <div class="field">
      <label>Uploaded At:</label>
-     <input type="datetime" name="uploaded_at" value="<%= image.get("uploaded_at") %>">
+     <input type="date" name="uploaded_at" value="<%= image.get("uploaded_at") %>">
    </div>
 
    <div class="actions">

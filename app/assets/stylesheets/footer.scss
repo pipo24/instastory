@@ -1,0 +1,21 @@
+.footer {
+  $large-screen: em(495) !default;
+  text-align: center;
+  ul {
+    margin: 0;
+    padding-left: 0;
+    li {
+      line-height: 1.5em;
+      padding-right: 1em;
+      font-size: 12px;
+      &:hover {
+        color: black;
+      }
+
+      @include media($large-screen) {
+        display: inline;
+        text-align: left;
+      }
+    }
+  }
+}

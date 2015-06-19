@@ -4,9 +4,7 @@
          <%= user.get("fullname") %> <a href="http://instagram.com/<%= user.get("nickname") %>" target="_blank">@<%= user.get("nickname") %></a>
       </h1>
       <div id="user-photo">
-         <p>
-            <img src="<%= user.get("profile_picture") %>">
-         </p>
+         <img src="<%= user.get("profile_picture") %>">
       </div>
       <p>
          <%= user.get("bio") %>

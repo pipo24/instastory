@@ -8,10 +8,16 @@
     <%= javascript_include_tag "lib/require", "data-main" => asset_url("application.js") %>
     <%= csrf_meta_tags %>
     <script>
-    window.authenticationToken = "<%= current_user.authentication_token if current_user %>"
+      window.authenticationToken = "<%= current_user.authentication_token if current_user %>"
     </script>
   </head>
   <body>
     <main></main>
+    <footer class="footer" role="contentinfo">
+      <ul>
+        <li><a target="_blank" href="http://www.filipposmm.com">&copy Filippo SMM</a></li>
+        <li><a target="_blank" href="http://www.github.com/pipo24/instastory">Github</a></li>
+      </ul>
+    </footer>
   </body>
   </html>

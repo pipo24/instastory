@@ -1,5 +1,9 @@
 #Final project: :blue_book: :camera: InstaStory :camera: :blue_book:
 
+##How Does it Work?
+![How it works]
+(https://trello-attachments.s3.amazonaws.com/55841f685a0ef1a5c949fab4/2744x2141/8bbf4e390041bd404fc4988a5adff80f/instastory.gif)
+
 ##Preparation:
 
   > Pick a problem and solve it using web dev means: internet, google, class-notes, teamworking and your tutors.
@@ -19,8 +23,6 @@
 #####As my final project at GA we were given full autonomy in choosing an idea and the tech we wanted to use.
 #####I chose to build a full Backbone static page app where users can create and save an album, as a ‘Story’, using Instagram photos with a specific hashtag.
 #####The images are displayed in a similar view to Instagram. Users can then edit/add/remove pictures from it.
-
-
   
 ###MVP:
  

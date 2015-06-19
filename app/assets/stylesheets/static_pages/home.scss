@@ -1,9 +1,9 @@
 .welcome {
   .welcome-header {
-    padding: 20px;
-    background-color: #D9CDBC;
-    border-radius: 5px;
-    box-shadow: 1px 3px 6px darken(#D9CDBC, 60%);
+    // padding: 20px;
+    // background-color: #D9CDBC;
+    // border-radius: 5px;
+    // box-shadow: 1px 3px 6px darken(#D9CDBC, 60%);
     width: 100% !important;
     margin: 0 auto;
     h1 {
@@ -12,6 +12,7 @@
       margin-bottom: 0 !important;
       padding-bottom: 5px;
       font-family: 'Monserrat', sans-serif;
+      font-weight: 300;
       span {
         font-size: 55px;
         font-family: 'Kaushan Script', cursive;
@@ -33,7 +34,7 @@
     .images {
       text-align: center;
       img {
-        max-width: 250px;
+        max-width: 65 0px;
       }
     }
   }

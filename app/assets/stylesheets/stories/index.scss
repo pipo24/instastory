@@ -27,7 +27,7 @@
   @include transition (all 0.3s ease-in-out);
   max-width: 372px;
   background-color: $card-background;
-  border-radius: $base-border-radius * 2;
+  border-radius: $base-border-radius;
   border: $card-border;
   box-shadow: 0 3px 6px darken($base-background-color, 40%);
   cursor: pointer;

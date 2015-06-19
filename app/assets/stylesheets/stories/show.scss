@@ -1,7 +1,9 @@
+$small-screen: em(320) !default;
+$medium-screen: em(480) !default;
+$large-screen: em(860) !default;
 .story-user-profile {
-  @include span-columns(4);
-  margin-bottom: 15px;
-  min-width: 100px;
+  text-align: center;
+  min-width: 180px;
   h1 {
     margin-top: 10px;
     font-size: 30px;
@@ -34,15 +36,26 @@
       border-radius: 8px;
     }
   }
+  @include media($small-screen) {
+    @include span-columns(12);
+  }
+  @include media($large-screen) {
+    @include span-columns(4);
+  }
+  @include media($medium-screen) {
+    @include span-columns(4);
+  }
 }
 
 .story-description {
+  @include omega();
+  margin-right: 0 !important;
   padding: 10px;
   padding-bottom: 20px;
   box-shadow: inset 0px 0px 1px 1px white;
-  @include span-columns(8);
-  @include omega();
+  background-color: white;
   h1 {
+    text-align: center;
     font-size: 40px;
     font-family: 'Montserrat', sans-serif;
     color: black;
@@ -73,6 +86,17 @@
       }
     }
   }
+  @include media($small-screen) {
+    @include span-columns(12);
+    margin-top: 10px;
+    margin-bottom: 10px;
+  }
+  @include media($large-screen) {
+    @include span-columns(8);
+  }
+  @include media($medium-screen) {
+    @include span-columns(8);
+  }
 }
 
 .story-images {
@@ -83,12 +107,6 @@
 
   .grid-items {
     $action-color: #477DCA !default;
-    // $base-background-color: white !default;
-    $small-screen: em(320) !default;
-    $medium-screen: em(480) !default;
-    $large-screen: em(860) !default;
-    // $grid-items-background: $base-background-color;
-    // $grid-item-background: desaturate($action-color, 30%);
     $grid-item-colors: #EBECED;
     $grid-item-border-size: 9px;
     $grid-item-columns: 4;
@@ -183,28 +201,6 @@
       @include media($large-screen) {
         @include grid-item-columns($grid-item-columns);
       }
-
-
-      // @for $i from 1 through length($grid-item-colors) { // assign colors from $grid-item-colors list
-      //   &:nth-child(#{$i}) {
-      //     $background-from-list: $grid-item-colors;
-      //     background-color: $background-from-list;
-      //     box-shadow: inset 0px 0px 2px 2px $background-from-list;
-      //     &:focus,
-      //     &:hover {
-      //       box-shadow: inset 0px 0px 1px 1px lighten(#517fa4, 40%);
-      //       background-repeat: no-repeat;
-      //       background-position: top;
-      //       background-size: cover;
-      //       img{
-      //         opacity: 0.7
-      //       }
-      //       p {
-      //         opacity: 1;
-      //       }
-      //     }
-      //   }
-      // }
     }
   }
 }

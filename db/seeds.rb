@@ -17,9 +17,9 @@ rane = User.create!(
   fullname: "Rane Gowan",
   age: 21,
   gender: "male",
-  nickname: "rane_gowan",
+  nickname: "ranegowan_",
   bio: "Oh yeh man I like dem shoes, an' I used to like dem Nandos but now that shiz is rank!",
-  profile_picture: "https://igcdn-photos-g-a.akamaihd.net/hphotos-ak-xpf1/t51.2885-19/10986326_801725773253022_974096051_a.jpg"
+  profile_picture: "https://scontent.cdninstagram.com/hphotos-xaf1/l/t51.2885-19/11372410_1618519125098766_5900570_a.jpg"
   )
 cheryl = User.create!(
   email: "cheryl@wee.com",

@@ -8,7 +8,7 @@ dominic = User.create!(
   gender: "male",
   nickname: "dominicvieira",
   bio: "Football, travelling, living, loving...",
-  profile_picture: "https://instagramimages-a.akamaihd.net/profiles/profile_326600680_75sq_1377948430.jpg"
+  profile_picture: "https://igcdn-photos-d-a.akamaihd.net/hphotos-ak-xaf1/t51.2885-19/s150x150/11430331_920663731329779_174319495_a.jpg"
   )
 rane = User.create!(
   email: "rane@gowan.com",
